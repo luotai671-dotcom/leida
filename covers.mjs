@@ -40,7 +40,17 @@ const visuals={
 'iplc-iepl-explained':base.globe+'<path d="M200 315 H560" stroke="currentColor" stroke-width="20" stroke-dasharray="12 12"/>',
 'shadowrocket-node-timeout-fix':base.phone+'<path d="M570 230 L660 320 M660 230 L570 320" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>',
 'mobile-proxy-battery-background':base.phone+'<rect x="560" y="240" width="100" height="180" rx="16" fill="none" stroke="currentColor" stroke-width="18"/>',
-'streaming-chatgpt-unlock-check':base.speed+'<polygon points="340,240 480,315 340,390" fill="currentColor"/>'};
+'streaming-chatgpt-unlock-check':base.speed+'<polygon points="340,240 480,315 340,390" fill="currentColor"/>',
+'clash-verge-rev-tutorial':base.laptop+'<polygon points="530,170 600,230 530,290" fill="none" stroke="currentColor" stroke-width="16"/><line x1="210" y1="210" x2="450" y2="210" stroke="currentColor" stroke-width="16"/><line x1="210" y1="280" x2="400" y2="280" stroke="currentColor" stroke-width="16"/>',
+'hysteria2-tuic-protocol-guide':base.speed+'<polygon points="380,140 330,280 430,280 370,430 480,250 390,250" fill="currentColor"/>',
+'router-openwrt-clash-guide':base.laptop+'<circle cx="580" cy="230" r="14" fill="currentColor"/><circle cx="630" cy="230" r="14" fill="currentColor"/><line x1="550" y1="330" x2="660" y2="330" stroke="currentColor" stroke-width="16"/>',
+'appletv-shadowrocket-proxy-guide':base.phone+'<rect x="530" y="180" width="160" height="110" rx="16" fill="none" stroke="currentColor" stroke-width="18"/><line x1="580" y1="320" x2="640" y2="320" stroke="currentColor" stroke-width="14"/>',
+'subconverter-security-guide':base.shield+'<path d="M300 280 H470 M430 250 L470 280 L430 310 M470 360 H300 M340 330 L300 360 L340 390" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>',
+'webrtc-dns-leak-protection':base.shield+'<circle cx="385" cy="315" r="75" fill="none" stroke="currentColor" stroke-width="16" stroke-dasharray="14 10"/><line x1="385" y1="210" x2="385" y2="420" stroke="currentColor" stroke-width="14"/><line x1="280" y1="315" x2="490" y2="315" stroke="currentColor" stroke-width="14"/>',
+'geosite-geoip-rules-customization':base.globe+'<rect x="520" y="170" width="160" height="70" rx="12" fill="none" stroke="currentColor" stroke-width="16"/><text x="600" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="900" fill="currentColor">GEO</text>',
+'bgp-tunnel-relay-principle':base.globe+'<line x1="160" y1="315" x2="600" y2="315" stroke="currentColor" stroke-width="18" stroke-dasharray="16 12"/><circle cx="160" cy="315" r="24" fill="currentColor"/><circle cx="600" cy="315" r="24" fill="currentColor"/>',
+'tiktok-crossborder-operation-network':base.phone+'<circle cx="600" cy="280" r="50" fill="none" stroke="currentColor" stroke-width="16"/><polygon points="590,260 620,280 590,300" fill="currentColor"/>',
+'speedtest-iperf3-loss-latency-master':base.speed+'<polyline points="200,510 320,440 420,490 530,370 640,430" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>'};
 
 export function generateCovers({topics,categories,destinations}){
   for(const article of topics){

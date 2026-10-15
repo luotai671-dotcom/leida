@@ -15,8 +15,20 @@ const types = {
 const server = http.createServer((request, response) => {
   let pathname = decodeURIComponent(request.url.split('?')[0]);
   if (pathname.endsWith('/')) pathname += 'index.html';
-  const file = path.resolve(root, `.${pathname}`);
+  let file = path.resolve(root, `.${pathname}`);
+  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) {
+    const idx = path.join(file, 'index.html');
+    if (fs.existsSync(idx)) file = idx;
+  } else if (!fs.existsSync(file) && fs.existsSync(file + '.html')) {
+    file = file + '.html';
+  }
   if (!file.startsWith(root) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
+    const custom404 = path.join(root, '404.html');
+    if (fs.existsSync(custom404)) {
+      response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+      fs.createReadStream(custom404).pipe(response);
+      return;
+    }
     response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
     response.end('页面不存在');
     return;

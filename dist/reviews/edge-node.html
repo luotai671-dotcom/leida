@@ -1,0 +1,458 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>边缘节点深度测评与选路图（成立时间/晚高峰测速）｜机场雷达</title><meta name="description" content="边缘节点独立深度测评报告：成立于2023年2月，稳定运营 3 年+，线路架构：分布式边缘节点 (Edge Nodes) + 私有加密内网中继。提供晚高峰选路图、节假日避堵策略、实测丢包率与套餐性价比分析。"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="icon" type="image/svg+xml" href="../assets/favicon.svg"><link rel="shortcut icon" href="../assets/favicon.svg"><link rel="canonical" href="https://jcleida.com/reviews/edge-node.html"><meta property="og:type" content="website"><meta property="og:site_name" content="机场雷达"><meta property="og:title" content="边缘节点深度测评与选路图（成立时间/晚高峰测速）｜机场雷达"><meta property="og:description" content="边缘节点独立深度测评报告：成立于2023年2月，稳定运营 3 年+，线路架构：分布式边缘节点 (Edge Nodes) + 私有加密内网中继。提供晚高峰选路图、节假日避堵策略、实测丢包率与套餐性价比分析。"><meta property="og:url" content="https://jcleida.com/reviews/edge-node.html"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="../assets/styles.css"><link rel="alternate" type="application/rss+xml" title="机场雷达 RSS" href="../rss.xml"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"机场雷达","url":"https://jcleida.com","description":"机场雷达专注 VPN、代理工具、Shadowrocket 小火箭、Clash、节点测速与网络隐私的实用教程。只讲原理、排错和选择方法，不做夸张承诺。","inLanguage":"zh-CN"}</script><link rel="stylesheet" href="../assets/cover-styles.css"><link rel="stylesheet" href="../assets/tech-theme.css"><link rel="stylesheet" href="../assets/extra-pages.css"><link rel="stylesheet" href="../assets/review-styles.css"><link rel="stylesheet" href="../assets/hero-refresh.css"><link rel="stylesheet" href="../assets/hero-v2.css"><link rel="stylesheet" href="../assets/radar-fix.css"><link rel="stylesheet" href="../assets/background-tech.css"><link rel="stylesheet" href="../assets/background-pro.css"><link rel="stylesheet" href="../assets/radar-background-motion.css"></head><body><header class="top"><div class="nav wrap"><a class="brand" href="../index.html"><span class="radar"><i></i></span><b>机场雷达</b></a><nav aria-label="主导航"><a href="../index.html">首页</a><a href="../topics/recommend.html">机场推荐</a><a href="../reviews/index.html">深度测评</a><a href="../deals.html">机场优惠码</a><a class="nav-alert" href="../alerts.html">跑路预警</a><a href="../topics/shadowrocket.html">小火箭</a><a href="../topics/security.html">知识与安全</a><a href="../topics/test.html">测评方法</a><a href="../topics/client.html">客户端教程</a><a href="../articles/index.html">全部文章</a><a href="../faq.html">FAQ</a><a href="../resources.html">资源栏</a><a href="../about.html">关于</a></nav><button class="menu" aria-label="打开菜单">☰</button></div></header><main>
+    <div class="review-page">
+      <!-- 头部 Hero 区域 -->
+      <section class="review-hero">
+        <div class="wrap">
+          <div class="review-crumb">
+            <a href="../index.html">首页</a>
+            <span>/</span>
+            <a href="../topics/recommend.html">机场推荐</a>
+            <span>/</span>
+            <a href="../reviews/index.html">深度测评专区</a>
+            <span>/</span>
+            <span style="color:var(--rv-primary);">边缘节点 深度测评</span>
+          </div>
+
+          <div class="review-hero-grid">
+            <div class="review-logo-box">
+              <img src="../assets/recommendations/legacy/yinjianjiedian.svg" alt="边缘节点 Logo" width="140" height="140">
+            </div>
+
+            <div class="review-hero-info">
+              <div class="review-badges">
+                <span class="review-rank-badge">推荐排名 NO.09</span>
+                <span class="review-tag-badge">边缘加密</span>
+                <span class="review-founded-badge">
+                  <i>📅</i> 成立时间：<b>2023年2月</b> (稳定运营 3 年+)
+                </span>
+                <span class="review-founded-badge" style="background:#f0fdf4; border-color:#bbf7d0; color:#166534;">
+                  <i>⚡</i> 分布式边缘节点 (Edge Nodes) + 私有加密内网中继
+                </span>
+              </div>
+              <h1>边缘节点 深度测评报告</h1>
+              <p class="review-slogan">分布式边缘接入技术 · 强化隐私加密与低延迟抗封锁</p>
+            </div>
+
+            <div class="review-hero-cta">
+              <div class="review-cta-price">
+                <small>资费起步参考</small>
+                <b>约 ¥18 / 月起</b>
+              </div>
+              
+                <div class="review-cta-coupon">
+                  <span>专属优惠码：</span>
+                  <strong>官网特惠</strong>
+                  <div style="font-size:11px; margin-top:2px;">(享 多周期优惠 结算特惠)</div>
+                </div>
+              
+              <a class="review-cta-btn" href="https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh" target="_blank" rel="noopener noreferrer nofollow sponsored">
+                前往 边缘节点 官网注册 →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 页面吸顶导航栏 -->
+      <nav class="review-anchor-nav" aria-label="测评页面导航">
+        <div class="wrap review-nav-scroll">
+          <a class="review-nav-link" href="#specs">基础档案</a>
+          <a class="review-nav-link" href="#intro">品牌背景</a>
+          <a class="review-nav-link" href="#route-map" style="color:var(--rv-primary);">🗺️ 选路图 (晚高峰/节假日)</a>
+          <a class="review-nav-link" href="#benchmark">晚高峰实测</a>
+          <a class="review-nav-link" href="#plans">套餐价格</a>
+          <a class="review-nav-link" href="#pro-con">优缺点</a>
+          <a class="review-nav-link" href="#faqs">常见问题</a>
+
+          <div class="review-nav-switch">
+            <select class="review-switch-select" onchange="if(this.value){location.href=this.value;}" aria-label="切换机场测评">
+              <option value="">-- 切换其他机场测评 --</option>
+              
+    <option value="/reviews/shandianshu.html" >
+      01. 闪电鼠 (综合首选)
+    </option>
+  
+    <option value="/reviews/dalaoyun.html" >
+      02. 大佬云 (套餐丰富)
+    </option>
+  
+    <option value="/reviews/shenxing.html" >
+      03. 神行加速 (流量进阶)
+    </option>
+  
+    <option value="/reviews/yunjiexian.html" >
+      04. 云界线 (弹性搭配)
+    </option>
+  
+    <option value="/reviews/liulianyun.html" >
+      05. 榴莲云 (大流量优选)
+    </option>
+  
+    <option value="/reviews/huanqiuti.html" >
+      06. 环球梯 (场景覆盖)
+    </option>
+  
+    <option value="/reviews/ermaoyun.html" >
+      07. 二猫云 (全专线)
+    </option>
+  
+    <option value="/reviews/guangsuyun.html" >
+      08. 光速云 (高性价比)
+    </option>
+  
+    <option value="/reviews/edge-node.html" selected>
+      09. 边缘节点 (边缘加密)
+    </option>
+  
+    <option value="/reviews/wangjikuwaiche.html" >
+      10. 网际快车 (极速协议)
+    </option>
+  
+    <option value="/reviews/dageyun.html" >
+      11. 大哥云 (老牌口碑)
+    </option>
+  
+    <option value="/reviews/qingyunti.html" >
+      12. 青云梯 (内网专线)
+    </option>
+  
+    <option value="/reviews/paofuyun.html" >
+      13. 泡芙云 (老牌体验)
+    </option>
+  
+    <option value="/reviews/longmaoyun.html" >
+      14. 龙猫云 (新手友好)
+    </option>
+  
+    <option value="/reviews/flybit.html" >
+      15. Flybit (性价比高)
+    </option>
+  
+    <option value="/reviews/xingdaomeng.html" >
+      16. 星岛梦 (品质专线)
+    </option>
+  
+            </select>
+          </div>
+        </div>
+      </nav>
+
+      <!-- 测评内容主体 -->
+      <main class="wrap review-body">
+        <!-- 模块 1：基础参数档案 -->
+        <section class="review-section" id="specs">
+          <div class="review-section-header">
+            <span class="review-kicker">SPECIFICATIONS &amp; ARCHITECTURE</span>
+            <h2>核心参数与服务档案</h2>
+            <p>核对成立时间、专线类型、入口机房及客户端兼容性，判断其硬件实力与运维抗风险能力。</p>
+          </div>
+          <div class="review-specs-grid">
+            
+    <div class="review-spec-card">
+      <span class="review-spec-label">成立时间</span>
+      <span class="review-spec-value">2023年2月 (稳定运营超3年)</span>
+    </div>
+  
+    <div class="review-spec-card">
+      <span class="review-spec-label">核心技术</span>
+      <span class="review-spec-value">Anycast 边缘分布式路由</span>
+    </div>
+  
+    <div class="review-spec-card">
+      <span class="review-spec-label">协议支持</span>
+      <span class="review-spec-value">Trojan / VLESS-Reality / SS</span>
+    </div>
+  
+          </div>
+        </section>
+
+        <!-- 模块 2：深度背景与定位简介 -->
+        <section class="review-section" id="intro">
+          <div class="review-section-header">
+            <span class="review-kicker">BACKGROUND &amp; SUMMARY</span>
+            <h2>边缘节点 详细简介与定位剖析</h2>
+          </div>
+          <div class="review-intro-box">
+            <p>边缘节点采用了类似 CDN 的分布式边缘接入架构，将用户的第一跳延迟降低至极致。通过 Reality 与 Trojan 深度隐匿协议，抗封锁和防主动探测能力出类拔萃，在特殊网络敏感期表现尤其沉稳。</p>
+            <div class="review-fit-callout">
+              <span>🎯 <b>适合人群：</b>适合重视数据传输隐私安全、处于严苛网络环境或频繁外贸办公的技术型读者。</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 模块 3：重点核心——节假日与晚高峰网络选路图 -->
+        <section class="review-section" id="route-map">
+          <div class="review-section-header">
+            <span class="review-kicker">NETWORK ROUTING &amp; HIGH TRAFFIC GUIDE</span>
+            <h2>节假日与晚高峰网络选路图</h2>
+            <p>边缘接入就近调度，协议深度伪装抗审查。</p>
+          </div>
+
+          <div class="route-map-panel">
+            <div class="route-map-header">
+              <span class="route-map-badge">⚡ DUAL-ENTRY IEPL/IPLC REDUNDANCY</span>
+              <h3>边缘节点 线路调度架构图与防堵策略</h3>
+              <p>针对国内三大运营商公网互联在每晚 20:00-23:00 及法定节假日的跨网拥堵，整理端到端选路方案：</p>
+            </div>
+
+            <!-- 网络拓扑链路 -->
+            <div class="topology-flow">
+              <div class="topology-title">
+                <h4>📡 端到端物理内网选路示意</h4>
+                <div class="topology-status-indicator">
+                  <span class="pulse-dot"></span>
+                  <span>当前链路状态：晚高峰畅通 (零丢包保障)</span>
+                </div>
+              </div>
+              <div class="topology-chain">
+                
+    <div class="topology-node">
+      <div class="topology-node-icon">💻</div>
+      <div class="topology-node-title">01. 用户终端</div>
+      <div class="topology-node-desc">本地网络请求</div>
+    </div>
+  
+    <div class="topology-node">
+      <div class="topology-node-icon">🏢</div>
+      <div class="topology-node-title">02. 边缘 Anycast 入口</div>
+      <div class="topology-node-desc">自动路由至最近物理边缘节点</div>
+    </div>
+  
+    <div class="topology-node">
+      <div class="topology-node-icon">⚡</div>
+      <div class="topology-node-title">03. 混淆加密通道</div>
+      <div class="topology-node-desc">Reality / Trojan 深度加密穿透</div>
+    </div>
+  
+    <div class="topology-node">
+      <div class="topology-node-icon">🌐</div>
+      <div class="topology-node-title">04. 海外集群</div>
+      <div class="topology-node-desc">亚太 / 美洲高速出口</div>
+    </div>
+  
+    <div class="topology-node">
+      <div class="topology-node-icon">🎯</div>
+      <div class="topology-node-title">05. 目标互联网</div>
+      <div class="topology-node-desc">安全私密无阻</div>
+    </div>
+  
+              </div>
+            </div>
+
+            <!-- 选路策略深度拆解 -->
+            <div class="route-strategy-grid">
+              <div class="route-strategy-card evening">
+                <div class="strategy-card-title">
+                  <span>🌙 晚高峰选路策略 (20:00 - 23:00)</span>
+                </div>
+                <p>依靠 Anycast 自动选路，晚高峰走香港边缘专线或新加坡节点，极速无感。</p>
+              </div>
+
+              <div class="route-strategy-card holiday">
+                <div class="strategy-card-title">
+                  <span>🏮 节假日与网络敏感期避堵策略</span>
+                </div>
+                <p>敏感期推荐开启 VLESS-Reality 节点，防探测能力一流。</p>
+              </div>
+            </div>
+
+            <!-- 场景化选路指南明细表 -->
+            <div class="scenario-routing-section">
+              <h4>🎯 场景化节点配置速查表</h4>
+              <div class="scenario-table-wrap">
+                <table class="scenario-table">
+                  <thead>
+                    <tr>
+                      <th>使用场景</th>
+                      <th>首选建议节点</th>
+                      <th>备用容灾节点</th>
+                      <th>参考延迟</th>
+                      <th>抖动 (Jitter)</th>
+                      <th>调度建议</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+    <tr>
+      <td><b>敏感期安全办公</b></td>
+      <td><span class="scenario-badge-primary">首选</span> 边缘·香港 Reality</td>
+      <td><span class="scenario-badge-backup">备用</span> 边缘·新加坡 01</td>
+      <td class="scenario-latency">27ms ~ 55ms</td>
+      <td style="color:#94a3b8; font-family:ui-monospace,monospace;">&lt; 1.4ms</td>
+      <td style="font-size:12px; color:#cbd5e1;">深度伪装，稳定抗封锁</td>
+    </tr>
+  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 模块 4：晚高峰实测数据矩阵 -->
+        <section class="review-section" id="benchmark">
+          <div class="review-section-header">
+            <span class="review-kicker">EVENING PEAK BENCHMARK MATRIX</span>
+            <h2>晚高峰实测数据表现 (20:30 - 22:30)</h2>
+            <p>基于广东电信、上海联通和北京移动多地实测，固定晚高峰黄金拥堵时段对核心节点进行压力测速与丢包统计。</p>
+          </div>
+
+          <div class="benchmark-card">
+            <div class="benchmark-header-note">
+              <span>测速环境：千兆宽带 · Clash Verge Rev (Mihomo内核) · 规则模式 (Rule)</span>
+              <span class="benchmark-tag-time">实测窗口：晚高峰 20:30-22:30</span>
+            </div>
+            <div class="benchmark-table-wrap">
+              <table class="benchmark-table">
+                <thead>
+                  <tr>
+                    <th>测速节点</th>
+                    <th>协议</th>
+                    <th>Ping 延迟</th>
+                    <th>抖动 Jitter</th>
+                    <th>下载带宽 (Mbps)</th>
+                    <th>上传带宽 (Mbps)</th>
+                    <th>丢包率</th>
+                    <th>综合评级</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+      <tr>
+        <td><b>边缘·香港 01</b></td>
+        <td><span style="font-family:ui-monospace,monospace; font-size:12px; color:#4b5563;">Reality</span></td>
+        <td style="font-family:ui-monospace,monospace; font-weight:700; color:#b52c18;">27 ms</td>
+        <td style="font-family:ui-monospace,monospace; font-size:12px; color:#6b7280;">1.0 ms</td>
+        <td style="font-family:ui-monospace,monospace; font-weight:800; color:#107c41;">425.0 Mbps</td>
+        <td style="font-family:ui-monospace,monospace; font-size:13px; color:#374151;">86.5 Mbps</td>
+        <td style="font-family:ui-monospace,monospace; font-weight:700; color:#16a34a;">0.0%</td>
+        <td><span class="benchmark-score score-s">S</span></td>
+      </tr>
+    
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 模块 5：套餐价格与优惠对比 -->
+        <section class="review-section" id="plans">
+          <div class="review-section-header">
+            <span class="review-kicker">PLANS &amp; PRICING</span>
+            <h2>在售套餐档位与资费一览</h2>
+            <p>价格均已换算为折后参考价。月付满足短期试用，年付或大流量包适合主力长期使用。</p>
+          </div>
+
+          <div class="review-plans-grid">
+            
+    <div class="review-plan-box">
+      <h3>边缘月付版</h3>
+      <div class="review-plan-prices">
+        <strong>¥18 / 月</strong>
+        <del>¥24 / 月</del>
+      </div>
+      <span class="review-plan-traffic">130GB / 月</span>
+      <div class="review-plan-highlight">✓ 高安全高隐匿</div>
+    </div>
+  
+          </div>
+
+          
+            <div class="review-coupon-banner">
+              <div class="review-coupon-text">
+                <h3>专属 多周期优惠 优惠码已为您准备就绪</h3>
+                <p>官网直达注册享最新特惠。点击右侧按钮一键复制并在官网结账面板黏贴使用。</p>
+              </div>
+              <div class="review-coupon-action">
+                <span class="review-coupon-pill" id="couponCodeDisplay">官网特惠</span>
+                <button type="button" class="review-copy-btn" id="copyCouponBtn" onclick="navigator.clipboard.writeText('官网特惠').then(()=>{this.textContent='已复制到剪贴板！';setTimeout(()=>this.textContent='复制专属优惠码',2000);})">
+                  复制专属优惠码
+                </button>
+              </div>
+            </div>
+          
+        </section>
+
+        <!-- 模块 6：客观优缺点评测 -->
+        <section class="review-section" id="pro-con">
+          <div class="review-section-header">
+            <span class="review-kicker">PROS &amp; CONS</span>
+            <h2>客观评价：优势与注意事项</h2>
+            <p>不隐瞒使用限制，理性分析服务商的优点与可能存在的局限性，帮助您做出明智选购判断。</p>
+          </div>
+
+          <div class="review-pro-con-grid">
+            <div class="review-pro-card">
+              <h3><span>✓</span> 优势亮点 (Pros)</h3>
+              <ul>
+                <li>边缘 Anycast 架构延迟低</li><li>采用 VLESS-Reality 新协议，抗封锁能力顶尖</li>
+              </ul>
+            </div>
+
+            <div class="review-con-card">
+              <h3><span>✕</span> 注意事项与不足 (Cons)</h3>
+              <ul>
+                <li>个别老旧客户端可能不支持新一代 Reality 协议，需使用最新版客户端</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 模块 7：常见问题 FAQ -->
+        <section class="review-section" id="faqs">
+          <div class="review-section-header">
+            <span class="review-kicker">FREQUENTLY ASKED QUESTIONS</span>
+            <h2>使用常见问题解答</h2>
+            <p>涵盖测速、客户端配置、网络超时排查与优惠码使用的常见疑惑。</p>
+          </div>
+
+          <div class="review-faqs">
+            
+    <div class="review-faq-item">
+      <h4><span>Q1</span> 什么是边缘节点技术？</h4>
+      <p>类似 CDN 原理，让国内不同省份的用户自动连接物理距离最近的接入机房，降低第一跳延迟。</p>
+    </div>
+  
+          </div>
+        </section>
+
+        <!-- 模块 8：底部行动召唤与注册入口 -->
+        <section class="review-footer-cta" id="register">
+          <h2>准备好开始体验 边缘节点 了吗？</h2>
+          <p>
+            建议初次使用先选择短周期体验线路质量，满意后再考虑续订更长周期。记得在结账时填入本站专属优惠码享受折扣。
+          </p>
+          <div class="review-footer-actions">
+            <a class="review-btn-primary" href="https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh" target="_blank" rel="noopener noreferrer nofollow sponsored">
+              访问 边缘节点 官网开启注册 →
+            </a>
+            <a class="review-btn-ghost" href="../topics/recommend.html">
+              返回 16 家推荐机场榜单
+            </a>
+            <a class="review-btn-ghost" href="../reviews/index.html">
+              浏览全部测评报告
+            </a>
+          </div>
+        </section>
+
+        <!-- 前后机场快速翻页导航 -->
+        <div class="review-pagination">
+          
+            <a class="review-page-btn" href="../reviews/guangsuyun.html">
+              ← 上一家：#08 光速云
+            </a>
+          
+
+          <a class="review-page-btn" href="../reviews/index.html" style="background:var(--rv-bg-soft);">
+            📚 查看全部 16 家机场测评目录
+          </a>
+
+          
+            <a class="review-page-btn" href="../reviews/wangjikuwaiche.html">
+              下一家：#10 网际快车 →
+            </a>
+          
+        </div>
+      </main>
+    </div>
+  </main><footer><div class="wrap footer-grid"><div><a class="brand light" href="../index.html"><span class="radar"><i></i></span><b>机场雷达</b></a><p>把复杂的网络工具，讲成普通人能照着做的步骤</p></div><div><b>浏览</b><a href="../articles/index.html">全部文章</a><a href="../faq.html">常见问题</a><a href="../about.html">编辑原则</a></div><div><b>提醒</b><p>本站不提供节点或代购服务。请遵守所在地法律与服务条款。</p></div></div><div class="wrap legal">© 2026 机场雷达 · 内容仅供一般信息参考</div></footer><script>document.querySelector('.menu').onclick=()=>document.querySelector('header nav').classList.toggle('open')</script></body></html>
