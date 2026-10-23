@@ -574,7 +574,7 @@ write('404.html', layout({
 
 write('robots.txt',`User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
 write('CNAME','jcleida.com\n');
-const INDEXNOW_KEY = '8ba37f6359c5d96936fbd91444a253cc';
+const INDEXNOW_KEY = '81fb9c6ec7be446016909f925e16c21f';
 write(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);
 const reviewPaths = ['/reviews/index.html', ...reviewsData.map(r => `/reviews/${r.slug}.html`)];
 const paths=['/','/articles/','/faq.html','/about.html','/alerts.html','/deals.html','/resources.html','/topics/recommend.html',...reviewPaths,...Object.keys(categories).map(k=>`/topics/${k}.html`),...topics.map(a=>`/articles/${a.slug}.html`)];

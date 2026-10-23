@@ -3,8 +3,8 @@ import path from 'node:path';
 
 export const INDEXNOW_CONFIG = {
   host: 'jcleida.com',
-  key: '8ba37f6359c5d96936fbd91444a253cc',
-  keyLocation: 'https://jcleida.com/8ba37f6359c5d96936fbd91444a253cc.txt',
+  key: '81fb9c6ec7be446016909f925e16c21f',
+  keyLocation: 'https://jcleida.com/81fb9c6ec7be446016909f925e16c21f.txt',
   endpoint: 'https://api.indexnow.org/indexnow'
 };
 
