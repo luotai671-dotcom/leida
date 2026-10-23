@@ -5,7 +5,11 @@ export const INDEXNOW_CONFIG = {
   host: 'jcleida.com',
   key: '81fb9c6ec7be446016909f925e16c21f',
   keyLocation: 'https://jcleida.com/81fb9c6ec7be446016909f925e16c21f.txt',
-  endpoint: 'https://api.indexnow.org/indexnow'
+  endpoints: [
+    'https://api.indexnow.org/indexnow',
+    'https://yandex.com/indexnow',
+    'https://indexnow.yep.com/indexnow'
+  ]
 };
 
 /**
@@ -23,32 +27,10 @@ export function extractUrlsFromSitemap(sitemapPath) {
 }
 
 /**
- * Send POST request to IndexNow API
+ * Send POST request to a specific IndexNow endpoint
  */
-export async function pushToIndexNow(urls = [], options = {}) {
-  const host = options.host || INDEXNOW_CONFIG.host;
-  const key = options.key || INDEXNOW_CONFIG.key;
-  const keyLocation = options.keyLocation || INDEXNOW_CONFIG.keyLocation;
-  const endpoint = options.endpoint || INDEXNOW_CONFIG.endpoint;
-
-  if (!urls || urls.length === 0) {
-    console.log('[IndexNow] ⚠️ No URLs provided to submit.');
-    return { success: false, statusCode: 0, message: 'No URLs provided' };
-  }
-
-  // IndexNow accepts up to 10,000 URLs per batch
-  const batchUrls = urls.slice(0, 10000);
-
-  const payload = {
-    host,
-    key,
-    keyLocation,
-    urlList: batchUrls
-  };
-
-  console.log(`[IndexNow] 🚀 Submitting ${batchUrls.length} URLs to ${endpoint}...`);
-  console.log(`[IndexNow] 🔑 Host: ${host} | Key: ${key.slice(0, 8)}... | KeyLocation: ${keyLocation}`);
-
+async function sendToEndpoint(endpoint, payload) {
+  console.log(`[IndexNow] 🚀 Submitting to ${endpoint}...`);
   try {
     const res = await fetch(endpoint, {
       method: 'POST',
@@ -63,18 +45,65 @@ export async function pushToIndexNow(urls = [], options = {}) {
     const bodyText = await res.text();
 
     if (status === 200) {
-      console.log(`[IndexNow] ✅ Success (200 OK): All URLs successfully submitted and indexed.`);
-      return { success: true, statusCode: 200, response: bodyText };
+      console.log(`[IndexNow] ✅ Success (200 OK) from ${endpoint}: URLs indexed successfully.`);
+      return { success: true, statusCode: 200, endpoint, response: bodyText };
     } else if (status === 202) {
-      console.log(`[IndexNow] ⏳ Accepted (202 Accepted): URL submission received, key pending verification.`);
-      return { success: true, statusCode: 202, response: bodyText };
+      console.log(`[IndexNow] ⏳ Accepted (202 Accepted) from ${endpoint}: URL submission received.`);
+      return { success: true, statusCode: 202, endpoint, response: bodyText };
     } else {
-      console.warn(`[IndexNow] ⚠️ Received response ${status} ${statusText}: ${bodyText}`);
-      return { success: false, statusCode: status, response: bodyText };
+      console.warn(`[IndexNow] ⚠️ ${endpoint} responded ${status} ${statusText}: ${bodyText}`);
+      return { success: false, statusCode: status, endpoint, response: bodyText };
     }
   } catch (error) {
-    console.error(`[IndexNow] ❌ Network error while submitting:`, error.message);
-    return { success: false, error: error.message };
+    console.error(`[IndexNow] ❌ Network error with ${endpoint}:`, error.message);
+    return { success: false, statusCode: 0, endpoint, error: error.message };
+  }
+}
+
+/**
+ * Submit URLs to IndexNow mesh network
+ */
+export async function pushToIndexNow(urls = [], options = {}) {
+  const host = options.host || INDEXNOW_CONFIG.host;
+  const key = options.key || INDEXNOW_CONFIG.key;
+  const keyLocation = options.keyLocation || INDEXNOW_CONFIG.keyLocation;
+  const endpoints = options.endpoint ? [options.endpoint] : (options.endpoints || INDEXNOW_CONFIG.endpoints);
+
+  if (!urls || urls.length === 0) {
+    console.log('[IndexNow] ⚠️ No URLs provided to submit.');
+    return { success: false, statusCode: 0, message: 'No URLs provided' };
+  }
+
+  const batchUrls = urls.slice(0, 10000);
+  const payload = {
+    host,
+    key,
+    keyLocation,
+    urlList: batchUrls
+  };
+
+  console.log(`[IndexNow] 📦 Prepared ${batchUrls.length} URLs for host: ${host}`);
+  console.log(`[IndexNow] 🔑 Key: ${key.slice(0, 8)}... | KeyLocation: ${keyLocation}`);
+
+  let primaryResult = null;
+  let successfulEndpoints = [];
+
+  for (const ep of endpoints) {
+    const res = await sendToEndpoint(ep, payload);
+    if (!primaryResult) primaryResult = res;
+    if (res.success) {
+      successfulEndpoints.push(ep);
+      // IndexNow mesh distributes URLs to all participating search engines once accepted
+      break;
+    }
+  }
+
+  if (successfulEndpoints.length > 0) {
+    console.log(`[IndexNow] 🎉 Submission successfully delivered to IndexNow network via: ${successfulEndpoints.join(', ')}`);
+    return { success: true, statusCode: 200, deliveredVia: successfulEndpoints };
+  } else {
+    console.warn(`[IndexNow] ⚠️ All endpoints returned non-success codes. Please check domain ownership & verification.`);
+    return primaryResult;
   }
 }
 
