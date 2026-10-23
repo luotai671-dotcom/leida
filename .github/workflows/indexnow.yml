@@ -1,0 +1,26 @@
+name: IndexNow URL Submission
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    # Run once a week at 00:00 UTC on Sunday to ensure search engines have fresh indexing
+    - cron: '0 0 * * 0'
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Submit URLs to IndexNow
+        run: |
+          node scripts/push-indexnow.mjs

@@ -39,6 +39,9 @@ fs.copyFileSync('background-pro.css',path.resolve('assets','background-pro.css')
 fs.copyFileSync('radar-background-motion.css',path.resolve('assets','radar-background-motion.css'));
 fs.copyFileSync('favicon.svg',path.resolve('assets','favicon.svg'));
 generateCovers({topics,categories,destinations:[out,path.resolve('.')]});
+if (fs.existsSync('public')) {
+  fs.cpSync('public', out, { recursive: true });
+}
 
 const esc=s=>String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
 const url=p=>site.url+(p==='/'?'':p);
@@ -571,10 +574,24 @@ write('404.html', layout({
 
 write('robots.txt',`User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
 write('CNAME','jcleida.com\n');
+const INDEXNOW_KEY = '8ba37f6359c5d96936fbd91444a253cc';
+write(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);
 const reviewPaths = ['/reviews/index.html', ...reviewsData.map(r => `/reviews/${r.slug}.html`)];
 const paths=['/','/articles/','/faq.html','/about.html','/alerts.html','/deals.html','/resources.html','/topics/recommend.html',...reviewPaths,...Object.keys(categories).map(k=>`/topics/${k}.html`),...topics.map(a=>`/articles/${a.slug}.html`)];
 write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p=>`  <url>\n    <loc>${url(p)}</loc>\n    <lastmod>2026-10-15</lastmod>\n  </url>`).join('\n')}\n</urlset>\n`);
 write('rss.xml',`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>${site.name}</title><link>${site.url}</link><description>${site.description}</description>${topics.slice(0,15).map(a=>`<item><title>${esc(a.title)}</title><link>${url('/articles/'+a.slug+'.html')}</link><guid>${url('/articles/'+a.slug+'.html')}</guid><pubDate>${new Date(a.date+'T08:00:00+08:00').toUTCString()}</pubDate><description>${esc(a.dek)}</description></item>`).join('')}</channel></rss>`);
 console.log(`Built ${paths.length} pages in ${out}`);
-if(process.argv.includes('--serve')){http.createServer((req,res)=>{let p=decodeURIComponent(req.url.split('?')[0]);if(p.endsWith('/'))p+='index.html';let f=path.join(out,p);if(fs.existsSync(f)&&fs.statSync(f).isDirectory()){const idx=path.join(f,'index.html');if(fs.existsSync(idx))f=idx}else if(!fs.existsSync(f)&&fs.existsSync(f+'.html')){f=f+'.html'}if(!f.startsWith(out)||!fs.existsSync(f)){const custom404=path.join(out,'404.html');if(fs.existsSync(custom404)){res.writeHead(404,{'Content-Type':'text/html; charset=utf-8'});return fs.createReadStream(custom404).pipe(res)}res.writeHead(404);return res.end('404')}res.setHeader('Content-Type',f.endsWith('.html')?'text/html; charset=utf-8':f.endsWith('.css')?'text/css':'application/xml');fs.createReadStream(f).pipe(res)}).listen(4173,()=>console.log('http://localhost:4173'))}
+
+if (!process.argv.includes('--serve') && !process.env.npm_lifecycle_event && !process.argv.includes('--no-indexnow')) {
+  try {
+    const { pushToIndexNow, extractUrlsFromSitemap } = await import('./scripts/push-indexnow.mjs');
+    const urls = extractUrlsFromSitemap(path.join(out, 'sitemap.xml'));
+    await pushToIndexNow(urls);
+  } catch (err) {
+    console.warn('[IndexNow] Notice:', err.message);
+  }
+}
+
+if(process.argv.includes('--serve')){http.createServer((req,res)=>{let p=decodeURIComponent(req.url.split('?')[0]);if(p.endsWith('/'))p+='index.html';let f=path.join(out,p);if(fs.existsSync(f)&&fs.statSync(f).isDirectory()){const idx=path.join(f,'index.html');if(fs.existsSync(idx))f=idx}else if(!fs.existsSync(f)&&fs.existsSync(f+'.html')){f=f+'.html'}if(!f.startsWith(out)||!fs.existsSync(f)){const custom404=path.join(out,'404.html');if(fs.existsSync(custom404)){res.writeHead(404,{'Content-Type':'text/html; charset=utf-8'});return fs.createReadStream(custom404).pipe(res)}res.writeHead(404);return res.end('404')}res.setHeader('Content-Type',f.endsWith('.html')?'text/html; charset=utf-8':f.endsWith('.css')?'text/css':f.endsWith('.txt')?'text/plain; charset=utf-8':'application/xml');fs.createReadStream(f).pipe(res)}).listen(4173,()=>console.log('http://localhost:4173'))}
+
 

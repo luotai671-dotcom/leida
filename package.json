@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "node build.mjs",
+    "postbuild": "node scripts/push-indexnow.mjs",
+    "indexnow": "node scripts/push-indexnow.mjs",
     "dev": "node build.mjs --serve"
   }
 }
