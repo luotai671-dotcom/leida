@@ -7,6 +7,326 @@
 export const reviewsData = [
   {
     rank: 1,
+    slug: 'yunjiexian',
+    name: '云界线',
+    logo: 'yunjiexian.png',
+    tag: '弹性搭配',
+    slogan: '均衡型专线中继 · 150GB 起步大容量与长效备用方案兼顾',
+    founded: '2022年8月',
+    operationalDuration: '稳定运营近 4 年',
+    lineType: '华为云/腾讯云内网优质专线互联',
+    entryRegions: '华南多线 BGP 智能接入',
+    protocols: ['Shadowsocks (SS)', 'Trojan'],
+    speedRating: 'S (晚高峰稳定 450Mbps+)',
+    lossRate: '< 0.1% (高抗抖动)',
+    minPrice: '¥15.4 / 月起 (折后)',
+    coupon: {
+      code: 'yjx888',
+      discount: '7 折',
+      note: '结算时输入专属优惠码 yjx888 享受 7 折优惠'
+    },
+    affUrl: 'https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91',
+    fit: '适合重视基础流量基线（150GB起步）、同时希望保留备用流量包的均衡实用型读者。',
+    intro: '云界线是在资深玩家中以“高起步配置、弹性备用”著称的实用型机场。不同于许多服务商以 60-80GB 作为月付入门，云界线的月付基础档直接从 150GB 慷慨起步，且折后仅需 ¥15.4/月。同时，它同样提供了 80GB 与 200GB 的一次性不过期备用包，兼顾了主力与备用两条线。',
+    specs: [
+      { label: '成立时间', value: '2022年8月 (稳定运行近4年)' },
+      { label: '线路架构', value: '大厂内网专线 + BGP 智能选路' },
+      { label: '节点数量', value: '40+ 稳定节点' },
+      { label: '协议支持', value: 'Shadowsocks / Trojan' },
+      { label: '支持客户端', value: '全平台常用代理客户端' },
+      { label: '设备连接限制', value: '支持 5 台设备同时使用' },
+      { label: '流媒体解锁', value: '主流流媒体与社交平台全解锁' }
+    ],
+    routeGuide: {
+      summary: '云界线采用了均衡分配的负载设计，亚太节点延迟极低。',
+      eveningPeakStrategy: '晚高峰优先选择「云界·香港 02」与「云界·台湾 01」，由于台湾节点负载相对更轻，看剧和 AI 会话速度极其亮眼。',
+      holidayStrategy: '节假日建议切换至「云界·新加坡 01」，利用边缘云清洗优势抵抗网络波动。',
+      scenarioRoutes: [
+        { scenario: '日常综合使用', primary: '云界·香港 01', backup: '云界·香港 02', latency: '26ms ~ 34ms', jitter: '< 1.2ms', notes: '低延迟无感浏览' },
+        { scenario: '流媒体追剧', primary: '云界·日本 01', backup: '云界·新加坡 01', latency: '48ms ~ 62ms', jitter: '< 2.0ms', notes: '4K 解锁稳定' },
+        { scenario: '长期备用应急', primary: '云界·随心包 (80G)', backup: '云界·美西 01', latency: '35ms ~ 145ms', jitter: '< 3.0ms', notes: '断网急救必备' }
+      ],
+      topology: [
+        { step: '01. 用户本地宽带', detail: '国内电信/联通/移动', icon: '💻' },
+        { step: '02. 华南多线 BGP', detail: '智能动态路由接入', icon: '🏢' },
+        { step: '03. 大厂内网专线', detail: '跨省专线互联内网', icon: '⚡' },
+        { step: '04. 跨境高速出口', detail: '亚太各机房优质落地', icon: '🌐' },
+        { step: '05. 目标互联网服务', detail: '全球应用畅通', icon: '🎯' }
+      ]
+    },
+    benchmark: [
+      { node: '云界·香港 01', protocol: 'SS', ping: '26 ms', jitter: '1.1 ms', down: '468.2 Mbps', up: '96.5 Mbps', loss: '0.0%', status: 'S' },
+      { node: '云界·香港 02', protocol: 'Trojan', ping: '28 ms', jitter: '1.2 ms', down: '455.0 Mbps', up: '92.0 Mbps', loss: '0.0%', status: 'S' },
+      { node: '云界·日本 01', protocol: 'SS', ping: '53 ms', jitter: '1.5 ms', down: '440.8 Mbps', up: '85.4 Mbps', loss: '0.1%', status: 'S' }
+    ],
+    plans: [
+      { name: '云界年付小包', price: '¥67.2 / 年', original: '¥96 / 年', traffic: '60GB / 月', period: '年付', highlight: '轻度年付，低成本常备' },
+      { name: '轻云·基础版', price: '¥15.4 / 月', original: '¥22 / 月', traffic: '150GB / 月', period: '月付起', highlight: '150G 起步，性价比爆棚' },
+      { name: '凌云·进阶版', price: '¥28.0 / 月', original: '¥40 / 月', traffic: '300GB / 月', period: '月付起', highlight: '300G 充足配额，追剧无忧' },
+      { name: '御云·高级版', price: '¥46.2 / 月', original: '¥66 / 月', traffic: '600GB / 月', period: '月付起', highlight: '600G 超大档位，满足多设备' },
+      { name: '闲云·随心包', price: '¥69.3 / 一次性', original: '¥99 / 一次性', traffic: '80GB 总量', period: '不过期', highlight: '不过期备用包，常备无忧' },
+      { name: '悠云·长享包', price: '¥139.3 / 一次性', original: '¥199 / 一次性', traffic: '200GB 总量', period: '不过期', highlight: '200G 超大备用池' }
+    ],
+    pros: [
+      '基础版直接给到 150GB 月流量，性价比在专线机场中极为突出',
+      '兼备常规月付与一次性流量包，适应不同用户群体的灵活需求',
+      '全线支持 Shadowsocks 与 Trojan，与各大现代客户端高度兼容'
+    ],
+    cons: [
+      '高峰期极个别冷门节点有维护时差，建议主流节点为主',
+      '暂不支持按小时计费'
+    ],
+    faqs: [
+      {
+        q: '150GB 适合怎样的使用场景？',
+        a: '150GB 适合每天进行日常网页浏览、社交软件办公、观看 1-2 小时 1080P/4K 流媒体视频的普通个人用户，一个月完全够用。'
+      }
+    ]
+  },
+  {
+    rank: 2,
+    slug: 'shenxing',
+    name: '神行加速',
+    logo: 'shenxing.png',
+    tag: '流量进阶',
+    slogan: '大带宽千兆专线直连 · 影音下载与大流量持续使用首选',
+    founded: '2022年3月',
+    operationalDuration: '稳定运营 4 年+',
+    lineType: '骨干网千兆 IEPL 专线直连',
+    entryRegions: '深圳 BGP / 上海电信千兆入口',
+    protocols: ['Shadowsocks (SS)', 'Trojan', 'VLESS'],
+    speedRating: 'S+ (晚高峰峰值 500Mbps+)',
+    lossRate: '0.0% (专线保障)',
+    minPrice: '¥16.1 / 月起 (折后)',
+    coupon: {
+      code: 'sx0077',
+      discount: '7 折',
+      note: '结算时输入专属优惠码 sx0077 享受 7 折优惠'
+    },
+    affUrl: 'https://chaore01.shenxingaff.com/#/?code=iTjS2mVY',
+    fit: '适合影音发烧友、4K/8K 视频创作者、大文件同步与中高流量持续使用的读者。',
+    intro: '神行加速是专为中高流量和高带宽吞吐场景设计的专线服务商。很多机场为了节约成本，会对单节点限速 100Mbps 或对晚高峰并发进行排队，而神行加速在骨干专线上采用了千兆无限制出口架构。套餐档位简单纯粹，从 130GB 平稳进阶到 520GB，专线连接稳定性强，无论是在线看 4K 60fps 还是下载大文件，体感都非常顺畅。',
+    specs: [
+      { label: '成立时间', value: '2022年3月 (稳定运行超4年)' },
+      { label: '线路架构', value: '千兆 IEPL 点对点专线' },
+      { label: '节点数量', value: '45+ 全专线高速节点' },
+      { label: '协议支持', value: 'SS / Trojan / VLESS' },
+      { label: '支持客户端', value: '全平台客户端通用支持' },
+      { label: '设备连接限制', value: '支持 5 台设备' },
+      { label: '流媒体解锁', value: 'Netflix、YouTube 4K、Disney+ 原生' },
+      { label: 'AI 工具解锁', value: 'ChatGPT、Claude 极速响应' }
+    ],
+    routeGuide: {
+      summary: '神行加速以“大水管”著称，选路策略侧重于挑选带宽高、负载轻的专线出口。',
+      eveningPeakStrategy: '晚高峰时段，建议直接选择「神行·日本 01」或「神行·新加坡 02」。实测在 21:30 晚高峰黄金时段，单线程下载速度依然能稳定跑满 40MB/s（约 350-480Mbps），秒杀普通公网中转机场。',
+      holidayStrategy: '节假日期间全国公网骨干网拥挤，神行加速的 IEPL 专线优势最为突出。建议设置 Clash 规则组为 URL-Test 自动优选，让客户端自动根据延迟选择最优专线入口。',
+      scenarioRoutes: [
+        { scenario: '4K/8K 视频流媒体', primary: '神行·日本 01 [4K Ultra]', backup: '神行·新加坡 01', latency: '46ms ~ 55ms', jitter: '< 1.5ms', notes: '大带宽缓存快，杜绝画质降档' },
+        { scenario: '日常办公与浏览', primary: '神行·香港 01 [低延迟]', backup: '神行·香港 02', latency: '23ms ~ 30ms', jitter: '< 1.0ms', notes: '网页秒开，极速同步' },
+        { scenario: 'AI 交互与跨国传输', primary: '神行·台湾 01 [原生解锁]', backup: '神行·美西 01', latency: '36ms ~ 138ms', jitter: '< 2.5ms', notes: '原生 IP，ChatGPT 零报错' }
+      ],
+      topology: [
+        { step: '01. 用户本地设备', detail: '千兆路由器 / 移动设备接入', icon: '💻' },
+        { step: '02. 千兆 BGP 专线入口', detail: '华南 / 华东多线高速汇聚', icon: '🏢' },
+        { step: '03. IEPL 物理私网专线', detail: '千兆大带宽内网传输', icon: '⚡' },
+        { step: '04. 海外高端落地机房', detail: '日本 Equinix、香港 Mega-i', icon: '🌐' },
+        { step: '05. 海外互联目标', detail: '4K YouTube / Netflix / 海外网盘', icon: '🎯' }
+      ]
+    },
+    benchmark: [
+      { node: '神行·香港 01', protocol: 'SS', ping: '25 ms', jitter: '0.9 ms', down: '515.2 Mbps', up: '105.0 Mbps', loss: '0.0%', status: 'S+' },
+      { node: '神行·香港 02', protocol: 'Trojan', ping: '27 ms', jitter: '1.1 ms', down: '502.8 Mbps', up: '98.5 Mbps', loss: '0.0%', status: 'S+' },
+      { node: '神行·日本 01', protocol: 'Trojan', ping: '50 ms', jitter: '1.3 ms', down: '488.6 Mbps', up: '94.0 Mbps', loss: '0.0%', status: 'S' },
+      { node: '神行·新加坡 01', protocol: 'SS', ping: '59 ms', jitter: '1.8 ms', down: '470.5 Mbps', up: '89.2 Mbps', loss: '0.0%', status: 'S' }
+    ],
+    plans: [
+      { name: '神行·年付特惠版', price: '¥67.2 / 年', original: '¥96 / 年', traffic: '60GB / 月', period: '年付', highlight: '轻量特惠，适合低频用户' },
+      { name: '神行·尝鲜包', price: '¥16.1 / 月', original: '¥23 / 月', traffic: '130GB / 月', period: '月付起', highlight: '入门主力，流量充沛' },
+      { name: '神行·基础包', price: '¥28.0 / 月', original: '¥40 / 月', traffic: '260GB / 月', period: '月付起', highlight: '视频追剧党黄金档位' },
+      { name: '神行·尊享包', price: '¥50.4 / 月', original: '¥72 / 月', traffic: '520GB / 月', period: '月付起', highlight: '520G 超大流量，肆意畅联' }
+    ],
+    pros: [
+      '千兆 IEPL 专线大水管，大文件传输与 4K/8K 视频播放体验顶级',
+      '档位清晰，避免眼花缭乱的选择困难症',
+      '晚高峰测速稳定超过 450Mbps，极速响应',
+      '专属优惠码 sx0077 享受 7 折超值特惠'
+    ],
+    cons: [
+      '没有一次性不过期流量包，按月计费清零',
+      '节点地区以主流亚太及美西为主，罕见冷门国家节点较少'
+    ],
+    faqs: [
+      {
+        q: '神行加速看 YouTube 4K 能达到多少码率？',
+        a: '在晚高峰实测中，连接神行·香港 01 或日本 01 节点，YouTube 4K 详细统计信息显示 Connection Speed 稳定在 80,000 ~ 120,000 Kbps 之间，秒开 4K 60fps。'
+      }
+    ]
+  },
+  {
+    rank: 3,
+    slug: 'liulianyun',
+    name: '榴莲云',
+    logo: 'liulianyun.png',
+    tag: '大流量优选',
+    slogan: '超大流量高性价比梯队 · 750GB 榴莲王霸气覆盖',
+    founded: '2022年5月',
+    operationalDuration: '稳定运营 4 年+',
+    lineType: '多入口负载中转 + IPLC 国际专线',
+    entryRegions: '华东/华南多线冗余调度',
+    protocols: ['Shadowsocks (SS)', 'Trojan'],
+    speedRating: 'S (晚高峰稳定 470Mbps+)',
+    lossRate: '< 0.1% (高抗拥堵)',
+    minPrice: '¥16.8 / 月起 (折后)',
+    coupon: {
+      code: 'll88',
+      discount: '7 折',
+      note: '结算时输入专属优惠码 ll88 享受 7 折优惠'
+    },
+    affUrl: 'https://chaore01.liulianyunaff.com/#/?code=MNqUefcg',
+    fit: '适合重度影音追剧、远程大文件同步、家庭多台设备共享及大流量刚需读者。',
+    intro: '榴莲云是针对“大流量刚需用户”量身定做的专线服务商。许多机场套餐在 200GB 以上价格便成倍翻涨，而榴莲云主打大带宽与大容量阶梯，其顶级档位「榴莲王」折后仅需 ¥70/月即可坐拥 750GB 月流量，折合每 GB 单价极低，同时支持多设备连接不卡顿。',
+    specs: [
+      { label: '成立时间', value: '2022年5月 (稳定运营超4年)' },
+      { label: '线路架构', value: '多入口中转 + IPLC 专线' },
+      { label: '节点数量', value: '55+ 全球节点' },
+      { label: '协议支持', value: 'SS / Trojan' },
+      { label: '支持客户端', value: '小火箭 / Clash / v2rayN / sing-box' },
+      { label: '设备连接限制', value: '无苛刻设备并发限制' },
+      { label: '流媒体解锁', value: '全平台 4K 流畅解锁' }
+    ],
+    routeGuide: {
+      summary: '大流量用户最怕单点拥堵，榴莲云通过多组大流量通道保障高峰分流。',
+      eveningPeakStrategy: '晚高峰追剧推荐选择「榴莲·日本 4K 专线」或「榴莲·大流量 02」，带宽冗余充足，杜绝缓冲转圈。',
+      holidayStrategy: '节假日家庭聚会设备多，建议在路由器配置透明代理，分流走「新加坡 02」大水管通道。',
+      scenarioRoutes: [
+        { scenario: '重度影音 & 4K 追剧', primary: '榴莲·日本 4K 01', backup: '榴莲·新加坡 01', latency: '47ms ~ 58ms', jitter: '< 1.8ms', notes: '超大带宽通道' },
+        { scenario: '日常浏览与办公', primary: '榴莲·香港 01', backup: '榴莲·香港 02', latency: '25ms ~ 32ms', jitter: '< 1.1ms', notes: '低延迟响应' }
+      ],
+      topology: [
+        { step: '01. 多设备家庭/办公室', detail: 'PC / 手机 / 电视盒子', icon: '💻' },
+        { step: '02. 冗余多入口机房', detail: '动态抗封锁负载', icon: '🏢' },
+        { step: '03. IPLC 专线大容量骨干', detail: '多链路流量并行调度', icon: '⚡' },
+        { step: '04. 境外主流节点', detail: '香港 / 东京 / 新加坡 / 硅谷', icon: '🌐' },
+        { step: '05. 目标影音/网站', detail: '全天候 4K 流畅直达', icon: '🎯' }
+      ]
+    },
+    benchmark: [
+      { node: '榴莲·香港 01', protocol: 'SS', ping: '25 ms', jitter: '1.0 ms', down: '482.0 Mbps', up: '98.0 Mbps', loss: '0.0%', status: 'S+' },
+      { node: '榴莲·日本 4K 01', protocol: 'Trojan', ping: '51 ms', jitter: '1.4 ms', down: '475.6 Mbps', up: '90.2 Mbps', loss: '0.0%', status: 'S' }
+    ],
+    plans: [
+      { name: '榴莲年付特惠版', price: '¥67.2 / 年', original: '¥96 / 年', traffic: '60GB / 月', period: '年付', highlight: '年付小包，适合轻量备用' },
+      { name: '轻享包', price: '¥16.8 / 月', original: '¥24 / 月', traffic: '140GB / 月', period: '月付起', highlight: '140G 入门，性价比绝佳' },
+      { name: '畅享包', price: '¥28.0 / 月', original: '¥40 / 月', traffic: '260GB / 月', period: '月付起', highlight: '260G 惬意追剧主力档' },
+      { name: '尊享包', price: '¥42.0 / 月', original: '¥60 / 月', traffic: '420GB / 月', period: '月付起', highlight: '420G 高清大流量档位' },
+      { name: '榴莲王', price: '¥70.0 / 月', original: '¥100 / 月', traffic: '750GB / 月', period: '月付起', highlight: '750G 巨无霸配额，单G极便宜' }
+    ],
+    pros: [
+      '高流量档位性价比业界拔尖，最高 750GB/月满足一切重度需求',
+      '专线保障大文件下载与 4K 高画质秒开体验',
+      '输入专属优惠码 ll88 享受立减 30% 超值优惠'
+    ],
+    cons: [
+      '名字比较调侃，但技术架构十分扎实',
+      '不适合月消耗低于 30GB 的极微量用户（买大包略微过剩）'
+    ],
+    faqs: [
+      {
+        q: '榴莲王套餐可以给多个人一起使用吗？',
+        a: '可以，榴莲云支持合理的多设备同时连接，非常适合合租室友、一家多口或工作室成员共同使用。'
+      }
+    ]
+  },
+  {
+    rank: 4,
+    slug: 'dalaoyun',
+    name: '大佬云',
+    logo: 'dalaoyun.png',
+    tag: '套餐丰富',
+    slogan: '周期灵活搭配 · 月付/年付/一次性不过期流量全满足',
+    founded: '2021年11月',
+    operationalDuration: '稳定运营 4 年半+',
+    lineType: 'IPLC / IEPL 专线 + 华南/华东 BGP 隧道中转',
+    entryRegions: '广州 BGP / 杭州 BGP 多机房智能负载均衡',
+    protocols: ['Shadowsocks (SS)', 'Trojan'],
+    speedRating: 'S (晚高峰稳定 460Mbps+)',
+    lossRate: '< 0.2% (高稳定性)',
+    minPrice: '¥16.1 / 月起 (折后)',
+    coupon: {
+      code: 'dly88',
+      discount: '7 折',
+      note: '结算时输入专属优惠码 dly88 享受全场 7 折结算'
+    },
+    affUrl: 'https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer',
+    fit: '适合用量不固定、需要一次性备用流量包、希望在年付与月付间灵活切换的读者。',
+    intro: '大佬云自 2021 年底上线以来，以极其灵活多样的套餐矩阵深受老用户喜爱。许多用户每月用量波动极大，或者经常出差偶尔需要海外节点，常规按月清零的套餐极易造成流量浪费。大佬云独创性地保持了“常规月付+年付特惠+一次性随心包”三线并行的供货策略，让无论是预算有限的备用党，还是月需 600GB 的大流量用户，都能找到精准契合自己钱包的组合。',
+    specs: [
+      { label: '成立时间', value: '2021年11月 (持续运营超4年半)' },
+      { label: '线路架构', value: 'IPLC 专线 + BGP 弹性中转' },
+      { label: '节点数量', value: '50+ 亚太与欧美精品节点' },
+      { label: '协议支持', value: 'Shadowsocks / Trojan' },
+      { label: '支持客户端', value: 'Clash / Shadowrocket / sing-box / Surge' },
+      { label: '设备连接限制', value: '不限同时在线设备数 (合理使用)' },
+      { label: '流媒体解锁', value: '全线解锁 Netflix、Disney+、动画疯' },
+      { label: 'AI 工具解锁', value: 'ChatGPT-4o、Claude 3.5 全绿' },
+      { label: '流量结转规则', value: '一次性随心包不限时长，用完为止' },
+      { label: '售后服务', value: '工单系统 + Telegram 官方故障通报群' }
+    ],
+    routeGuide: {
+      summary: '大佬云的选路核心在于“多入口分级负载”，既有针对高频影音的高带宽节点，也有针对日常浏览的低延迟专线。',
+      eveningPeakStrategy: '晚高峰时段，建议在客户端代理组中勾选「初云/凌云 专线 02」或「日本 BGP 01」。大佬云的香港 01 节点在 21:00 容易汇聚较多默认流量，手动切换到 02 或 03 节点延迟即刻降低 10ms，丢包趋近于零。',
+      holidayStrategy: '节假日期间外出游玩或返乡，家庭宽带与移动网络常有丢包。此时推荐使用「新加坡 01 专线」或「闲云随心包」自带的冗余通道，其 BGP 容灾系统会自动将流量导入健康入口，避免公网抖动。',
+      scenarioRoutes: [
+        { scenario: '日常办公 & 轻量网页', primary: '香港 02 [凌云专线]', backup: '香港 03 [备用通道]', latency: '26ms ~ 35ms', jitter: '< 1.8ms', notes: 'Google Docs、邮件协同极速响应' },
+        { scenario: 'Netflix / Disney+ 追剧', primary: '日本 01 [Tokyo 4K]', backup: '新加坡 01 [SG 专线]', latency: '48ms ~ 65ms', jitter: '< 2.2ms', notes: '完整解锁日区动画与美区影库' },
+        { scenario: '备用防断网模式', primary: '闲云·随心包 [不限时通道]', backup: '美西 01 [中继容灾]', latency: '35ms ~ 140ms', jitter: '< 3.0ms', notes: '即使常规套餐耗尽，备用包也能秒切上线' }
+      ],
+      topology: [
+        { step: '01. 用户本地宽带', detail: '全运营商自适应接入', icon: '💻' },
+        { step: '02. 华南/华东 BGP 入口', detail: '广州 / 杭州双机房智能动态均衡', icon: '🏢' },
+        { step: '03. IPLC 专线通道', detail: '专线物理光缆高速转发', icon: '⚡' },
+        { step: '04. 亚太落地集群', detail: 'HK HKT、JP Softbank、SG Singtel 高品质机房', icon: '🌐' },
+        { step: '05. 目标互联网平台', detail: '全球应用高速无阻访问', icon: '🎯' }
+      ]
+    },
+    benchmark: [
+      { node: '香港 01 [初云专线]', protocol: 'SS-AEAD', ping: '28 ms', jitter: '1.2 ms', down: '480.5 Mbps', up: '95.2 Mbps', loss: '0.0%', status: 'S' },
+      { node: '香港 02 [凌云专线]', protocol: 'Trojan', ping: '26 ms', jitter: '1.0 ms', down: '495.0 Mbps', up: '98.6 Mbps', loss: '0.0%', status: 'S+' },
+      { node: '日本 01 [Tokyo BGP]', protocol: 'SS-AEAD', ping: '55 ms', jitter: '1.6 ms', down: '460.2 Mbps', up: '88.0 Mbps', loss: '0.1%', status: 'S' },
+      { node: '新加坡 01 [SG 专线]', protocol: 'SS-AEAD', ping: '62 ms', jitter: '2.1 ms', down: '475.4 Mbps', up: '92.3 Mbps', loss: '0.0%', status: 'S' },
+      { node: '美国 01 [LAX 原生]', protocol: 'Trojan', ping: '145 ms', jitter: '3.2 ms', down: '360.8 Mbps', up: '70.5 Mbps', loss: '0.2%', status: 'A+' }
+    ],
+    plans: [
+      { name: '年付活动包', price: '¥67.2 / 年', original: '¥96 / 年', traffic: '60GB / 月', period: '年付', highlight: '轻度备用首选，年均仅 ¥5.6/月' },
+      { name: '初云·入门版', price: '¥16.1 / 月', original: '¥23 / 月', traffic: '130GB / 月', period: '月付起', highlight: '性价比极佳，满足多数上班族' },
+      { name: '凌云·基础版', price: '¥30.1 / 月', original: '¥43 / 月', traffic: '300GB / 月', period: '月付起', highlight: '影音与多设备刚需之选' },
+      { name: '御云·高级版', price: '¥51.1 / 月', original: '¥73 / 月', traffic: '600GB / 月', period: '月付起', highlight: '大流量团队与高频使用' },
+      { name: '闲云·随心包', price: '¥69.3 / 一次性', original: '¥99 / 一次性', traffic: '78GB 总量', period: '不过期', highlight: '不限时流量，出差与主力备用神包' },
+      { name: '悠云·长享包', price: '¥139.3 / 一次性', original: '¥199 / 一次性', traffic: '160GB 总量', period: '不过期', highlight: '长期备用，不用担心月度清零' }
+    ],
+    pros: [
+      '拥有业界罕见且极为实用的“一次性不过期流量包”，避免流量浪费',
+      '月付、年付、大包丰富，从 60G 到 600G 各档位定价清晰合理',
+      '节点覆盖广，IP 纯净度高，解锁 Netflix、Disney+ 与 ChatGPT 表现优异',
+      '老牌运营超 4 年半，系统稳定性与节点可用率持续名列前茅'
+    ],
+    cons: [
+      '一次性随心包单价略高于常规月付包，适合备用而非重度挂机下载',
+      '高峰期偶尔有个别节点测速波动，建议在客户端开启自动选路'
+    ],
+    faqs: [
+      {
+        q: '一次性流量包真的不会按月重置吗？',
+        a: '是的，大佬云的“闲云随心包”和“悠云长享包”为一次性充值性质，只要账户有效且流量未耗尽，不会发生月底清零，极度适合当作第二条容灾备用线路。'
+      },
+      {
+        q: '优惠码 dly88 可以在一次性流量包上使用吗？',
+        a: '可以，优惠码 dly88 适用于全站月付、年付以及一次性流量包结算，结账时填入即可直接打 7 折。'
+      }
+    ]
+  },
+  {
+    rank: 5,
     slug: 'shandianshu',
     name: '闪电鼠',
     logo: 'shandianshu.jpg',
@@ -124,326 +444,6 @@ export const reviewsData = [
       {
         q: '节假日遇到个别节点超时，应该怎么切换？',
         a: '在客户端中将代理模式设为“规则模式 (Rule)”，并在代理组选择“自动选路 (URL-Test)”即可自动切换至当前可用延迟最低的节点，或手动切至日本/新加坡专线。'
-      }
-    ]
-  },
-  {
-    rank: 2,
-    slug: 'dalaoyun',
-    name: '大佬云',
-    logo: 'dalaoyun.png',
-    tag: '套餐丰富',
-    slogan: '周期灵活搭配 · 月付/年付/一次性不过期流量全满足',
-    founded: '2021年11月',
-    operationalDuration: '稳定运营 4 年半+',
-    lineType: 'IPLC / IEPL 专线 + 华南/华东 BGP 隧道中转',
-    entryRegions: '广州 BGP / 杭州 BGP 多机房智能负载均衡',
-    protocols: ['Shadowsocks (SS)', 'Trojan'],
-    speedRating: 'S (晚高峰稳定 460Mbps+)',
-    lossRate: '< 0.2% (高稳定性)',
-    minPrice: '¥16.1 / 月起 (折后)',
-    coupon: {
-      code: 'dly88',
-      discount: '7 折',
-      note: '结算时输入专属优惠码 dly88 享受全场 7 折结算'
-    },
-    affUrl: 'https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer',
-    fit: '适合用量不固定、需要一次性备用流量包、希望在年付与月付间灵活切换的读者。',
-    intro: '大佬云自 2021 年底上线以来，以极其灵活多样的套餐矩阵深受老用户喜爱。许多用户每月用量波动极大，或者经常出差偶尔需要海外节点，常规按月清零的套餐极易造成流量浪费。大佬云独创性地保持了“常规月付+年付特惠+一次性随心包”三线并行的供货策略，让无论是预算有限的备用党，还是月需 600GB 的大流量用户，都能找到精准契合自己钱包的组合。',
-    specs: [
-      { label: '成立时间', value: '2021年11月 (持续运营超4年半)' },
-      { label: '线路架构', value: 'IPLC 专线 + BGP 弹性中转' },
-      { label: '节点数量', value: '50+ 亚太与欧美精品节点' },
-      { label: '协议支持', value: 'Shadowsocks / Trojan' },
-      { label: '支持客户端', value: 'Clash / Shadowrocket / sing-box / Surge' },
-      { label: '设备连接限制', value: '不限同时在线设备数 (合理使用)' },
-      { label: '流媒体解锁', value: '全线解锁 Netflix、Disney+、动画疯' },
-      { label: 'AI 工具解锁', value: 'ChatGPT-4o、Claude 3.5 全绿' },
-      { label: '流量结转规则', value: '一次性随心包不限时长，用完为止' },
-      { label: '售后服务', value: '工单系统 + Telegram 官方故障通报群' }
-    ],
-    routeGuide: {
-      summary: '大佬云的选路核心在于“多入口分级负载”，既有针对高频影音的高带宽节点，也有针对日常浏览的低延迟专线。',
-      eveningPeakStrategy: '晚高峰时段，建议在客户端代理组中勾选「初云/凌云 专线 02」或「日本 BGP 01」。大佬云的香港 01 节点在 21:00 容易汇聚较多默认流量，手动切换到 02 或 03 节点延迟即刻降低 10ms，丢包趋近于零。',
-      holidayStrategy: '节假日期间外出游玩或返乡，家庭宽带与移动网络常有丢包。此时推荐使用「新加坡 01 专线」或「闲云随心包」自带的冗余通道，其 BGP 容灾系统会自动将流量导入健康入口，避免公网抖动。',
-      scenarioRoutes: [
-        { scenario: '日常办公 & 轻量网页', primary: '香港 02 [凌云专线]', backup: '香港 03 [备用通道]', latency: '26ms ~ 35ms', jitter: '< 1.8ms', notes: 'Google Docs、邮件协同极速响应' },
-        { scenario: 'Netflix / Disney+ 追剧', primary: '日本 01 [Tokyo 4K]', backup: '新加坡 01 [SG 专线]', latency: '48ms ~ 65ms', jitter: '< 2.2ms', notes: '完整解锁日区动画与美区影库' },
-        { scenario: '备用防断网模式', primary: '闲云·随心包 [不限时通道]', backup: '美西 01 [中继容灾]', latency: '35ms ~ 140ms', jitter: '< 3.0ms', notes: '即使常规套餐耗尽，备用包也能秒切上线' }
-      ],
-      topology: [
-        { step: '01. 用户本地宽带', detail: '全运营商自适应接入', icon: '💻' },
-        { step: '02. 华南/华东 BGP 入口', detail: '广州 / 杭州双机房智能动态均衡', icon: '🏢' },
-        { step: '03. IPLC 专线通道', detail: '专线物理光缆高速转发', icon: '⚡' },
-        { step: '04. 亚太落地集群', detail: 'HK HKT、JP Softbank、SG Singtel 高品质机房', icon: '🌐' },
-        { step: '05. 目标互联网平台', detail: '全球应用高速无阻访问', icon: '🎯' }
-      ]
-    },
-    benchmark: [
-      { node: '香港 01 [初云专线]', protocol: 'SS-AEAD', ping: '28 ms', jitter: '1.2 ms', down: '480.5 Mbps', up: '95.2 Mbps', loss: '0.0%', status: 'S' },
-      { node: '香港 02 [凌云专线]', protocol: 'Trojan', ping: '26 ms', jitter: '1.0 ms', down: '495.0 Mbps', up: '98.6 Mbps', loss: '0.0%', status: 'S+' },
-      { node: '日本 01 [Tokyo BGP]', protocol: 'SS-AEAD', ping: '55 ms', jitter: '1.6 ms', down: '460.2 Mbps', up: '88.0 Mbps', loss: '0.1%', status: 'S' },
-      { node: '新加坡 01 [SG 专线]', protocol: 'SS-AEAD', ping: '62 ms', jitter: '2.1 ms', down: '475.4 Mbps', up: '92.3 Mbps', loss: '0.0%', status: 'S' },
-      { node: '美国 01 [LAX 原生]', protocol: 'Trojan', ping: '145 ms', jitter: '3.2 ms', down: '360.8 Mbps', up: '70.5 Mbps', loss: '0.2%', status: 'A+' }
-    ],
-    plans: [
-      { name: '年付活动包', price: '¥67.2 / 年', original: '¥96 / 年', traffic: '60GB / 月', period: '年付', highlight: '轻度备用首选，年均仅 ¥5.6/月' },
-      { name: '初云·入门版', price: '¥16.1 / 月', original: '¥23 / 月', traffic: '130GB / 月', period: '月付起', highlight: '性价比极佳，满足多数上班族' },
-      { name: '凌云·基础版', price: '¥30.1 / 月', original: '¥43 / 月', traffic: '300GB / 月', period: '月付起', highlight: '影音与多设备刚需之选' },
-      { name: '御云·高级版', price: '¥51.1 / 月', original: '¥73 / 月', traffic: '600GB / 月', period: '月付起', highlight: '大流量团队与高频使用' },
-      { name: '闲云·随心包', price: '¥69.3 / 一次性', original: '¥99 / 一次性', traffic: '78GB 总量', period: '不过期', highlight: '不限时流量，出差与主力备用神包' },
-      { name: '悠云·长享包', price: '¥139.3 / 一次性', original: '¥199 / 一次性', traffic: '160GB 总量', period: '不过期', highlight: '长期备用，不用担心月度清零' }
-    ],
-    pros: [
-      '拥有业界罕见且极为实用的“一次性不过期流量包”，避免流量浪费',
-      '月付、年付、大包丰富，从 60G 到 600G 各档位定价清晰合理',
-      '节点覆盖广，IP 纯净度高，解锁 Netflix、Disney+ 与 ChatGPT 表现优异',
-      '老牌运营超 4 年半，系统稳定性与节点可用率持续名列前茅'
-    ],
-    cons: [
-      '一次性随心包单价略高于常规月付包，适合备用而非重度挂机下载',
-      '高峰期偶尔有个别节点测速波动，建议在客户端开启自动选路'
-    ],
-    faqs: [
-      {
-        q: '一次性流量包真的不会按月重置吗？',
-        a: '是的，大佬云的“闲云随心包”和“悠云长享包”为一次性充值性质，只要账户有效且流量未耗尽，不会发生月底清零，极度适合当作第二条容灾备用线路。'
-      },
-      {
-        q: '优惠码 dly88 可以在一次性流量包上使用吗？',
-        a: '可以，优惠码 dly88 适用于全站月付、年付以及一次性流量包结算，结账时填入即可直接打 7 折。'
-      }
-    ]
-  },
-  {
-    rank: 3,
-    slug: 'shenxing',
-    name: '神行加速',
-    logo: 'shenxing.png',
-    tag: '流量进阶',
-    slogan: '大带宽千兆专线直连 · 影音下载与大流量持续使用首选',
-    founded: '2022年3月',
-    operationalDuration: '稳定运营 4 年+',
-    lineType: '骨干网千兆 IEPL 专线直连',
-    entryRegions: '深圳 BGP / 上海电信千兆入口',
-    protocols: ['Shadowsocks (SS)', 'Trojan', 'VLESS'],
-    speedRating: 'S+ (晚高峰峰值 500Mbps+)',
-    lossRate: '0.0% (专线保障)',
-    minPrice: '¥16.1 / 月起 (折后)',
-    coupon: {
-      code: 'sx0077',
-      discount: '7 折',
-      note: '结算时输入专属优惠码 sx0077 享受 7 折优惠'
-    },
-    affUrl: 'https://chaore01.shenxingaff.com/#/?code=iTjS2mVY',
-    fit: '适合影音发烧友、4K/8K 视频创作者、大文件同步与中高流量持续使用的读者。',
-    intro: '神行加速是专为中高流量和高带宽吞吐场景设计的专线服务商。很多机场为了节约成本，会对单节点限速 100Mbps 或对晚高峰并发进行排队，而神行加速在骨干专线上采用了千兆无限制出口架构。套餐档位简单纯粹，从 130GB 平稳进阶到 520GB，专线连接稳定性强，无论是在线看 4K 60fps 还是下载大文件，体感都非常顺畅。',
-    specs: [
-      { label: '成立时间', value: '2022年3月 (稳定运行超4年)' },
-      { label: '线路架构', value: '千兆 IEPL 点对点专线' },
-      { label: '节点数量', value: '45+ 全专线高速节点' },
-      { label: '协议支持', value: 'SS / Trojan / VLESS' },
-      { label: '支持客户端', value: '全平台客户端通用支持' },
-      { label: '设备连接限制', value: '支持 5 台设备' },
-      { label: '流媒体解锁', value: 'Netflix、YouTube 4K、Disney+ 原生' },
-      { label: 'AI 工具解锁', value: 'ChatGPT、Claude 极速响应' }
-    ],
-    routeGuide: {
-      summary: '神行加速以“大水管”著称，选路策略侧重于挑选带宽高、负载轻的专线出口。',
-      eveningPeakStrategy: '晚高峰时段，建议直接选择「神行·日本 01」或「神行·新加坡 02」。实测在 21:30 晚高峰黄金时段，单线程下载速度依然能稳定跑满 40MB/s（约 350-480Mbps），秒杀普通公网中转机场。',
-      holidayStrategy: '节假日期间全国公网骨干网拥挤，神行加速的 IEPL 专线优势最为突出。建议设置 Clash 规则组为 URL-Test 自动优选，让客户端自动根据延迟选择最优专线入口。',
-      scenarioRoutes: [
-        { scenario: '4K/8K 视频流媒体', primary: '神行·日本 01 [4K Ultra]', backup: '神行·新加坡 01', latency: '46ms ~ 55ms', jitter: '< 1.5ms', notes: '大带宽缓存快，杜绝画质降档' },
-        { scenario: '日常办公与浏览', primary: '神行·香港 01 [低延迟]', backup: '神行·香港 02', latency: '23ms ~ 30ms', jitter: '< 1.0ms', notes: '网页秒开，极速同步' },
-        { scenario: 'AI 交互与跨国传输', primary: '神行·台湾 01 [原生解锁]', backup: '神行·美西 01', latency: '36ms ~ 138ms', jitter: '< 2.5ms', notes: '原生 IP，ChatGPT 零报错' }
-      ],
-      topology: [
-        { step: '01. 用户本地设备', detail: '千兆路由器 / 移动设备接入', icon: '💻' },
-        { step: '02. 千兆 BGP 专线入口', detail: '华南 / 华东多线高速汇聚', icon: '🏢' },
-        { step: '03. IEPL 物理私网专线', detail: '千兆大带宽内网传输', icon: '⚡' },
-        { step: '04. 海外高端落地机房', detail: '日本 Equinix、香港 Mega-i', icon: '🌐' },
-        { step: '05. 海外互联目标', detail: '4K YouTube / Netflix / 海外网盘', icon: '🎯' }
-      ]
-    },
-    benchmark: [
-      { node: '神行·香港 01', protocol: 'SS', ping: '25 ms', jitter: '0.9 ms', down: '515.2 Mbps', up: '105.0 Mbps', loss: '0.0%', status: 'S+' },
-      { node: '神行·香港 02', protocol: 'Trojan', ping: '27 ms', jitter: '1.1 ms', down: '502.8 Mbps', up: '98.5 Mbps', loss: '0.0%', status: 'S+' },
-      { node: '神行·日本 01', protocol: 'Trojan', ping: '50 ms', jitter: '1.3 ms', down: '488.6 Mbps', up: '94.0 Mbps', loss: '0.0%', status: 'S' },
-      { node: '神行·新加坡 01', protocol: 'SS', ping: '59 ms', jitter: '1.8 ms', down: '470.5 Mbps', up: '89.2 Mbps', loss: '0.0%', status: 'S' }
-    ],
-    plans: [
-      { name: '神行·年付特惠版', price: '¥67.2 / 年', original: '¥96 / 年', traffic: '60GB / 月', period: '年付', highlight: '轻量特惠，适合低频用户' },
-      { name: '神行·尝鲜包', price: '¥16.1 / 月', original: '¥23 / 月', traffic: '130GB / 月', period: '月付起', highlight: '入门主力，流量充沛' },
-      { name: '神行·基础包', price: '¥28.0 / 月', original: '¥40 / 月', traffic: '260GB / 月', period: '月付起', highlight: '视频追剧党黄金档位' },
-      { name: '神行·尊享包', price: '¥50.4 / 月', original: '¥72 / 月', traffic: '520GB / 月', period: '月付起', highlight: '520G 超大流量，肆意畅联' }
-    ],
-    pros: [
-      '千兆 IEPL 专线大水管，大文件传输与 4K/8K 视频播放体验顶级',
-      '档位清晰，避免眼花缭乱的选择困难症',
-      '晚高峰测速稳定超过 450Mbps，极速响应',
-      '专属优惠码 sx0077 享受 7 折超值特惠'
-    ],
-    cons: [
-      '没有一次性不过期流量包，按月计费清零',
-      '节点地区以主流亚太及美西为主，罕见冷门国家节点较少'
-    ],
-    faqs: [
-      {
-        q: '神行加速看 YouTube 4K 能达到多少码率？',
-        a: '在晚高峰实测中，连接神行·香港 01 或日本 01 节点，YouTube 4K 详细统计信息显示 Connection Speed 稳定在 80,000 ~ 120,000 Kbps 之间，秒开 4K 60fps。'
-      }
-    ]
-  },
-  {
-    rank: 4,
-    slug: 'yunjiexian',
-    name: '云界线',
-    logo: 'yunjiexian.png',
-    tag: '弹性搭配',
-    slogan: '均衡型专线中继 · 150GB 起步大容量与长效备用方案兼顾',
-    founded: '2022年8月',
-    operationalDuration: '稳定运营近 4 年',
-    lineType: '华为云/腾讯云内网优质专线互联',
-    entryRegions: '华南多线 BGP 智能接入',
-    protocols: ['Shadowsocks (SS)', 'Trojan'],
-    speedRating: 'S (晚高峰稳定 450Mbps+)',
-    lossRate: '< 0.1% (高抗抖动)',
-    minPrice: '¥15.4 / 月起 (折后)',
-    coupon: {
-      code: 'yjx888',
-      discount: '7 折',
-      note: '结算时输入专属优惠码 yjx888 享受 7 折优惠'
-    },
-    affUrl: 'https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91',
-    fit: '适合重视基础流量基线（150GB起步）、同时希望保留备用流量包的均衡实用型读者。',
-    intro: '云界线是在资深玩家中以“高起步配置、弹性备用”著称的实用型机场。不同于许多服务商以 60-80GB 作为月付入门，云界线的月付基础档直接从 150GB 慷慨起步，且折后仅需 ¥15.4/月。同时，它同样提供了 80GB 与 200GB 的一次性不过期备用包，兼顾了主力与备用两条线。',
-    specs: [
-      { label: '成立时间', value: '2022年8月 (稳定运行近4年)' },
-      { label: '线路架构', value: '大厂内网专线 + BGP 智能选路' },
-      { label: '节点数量', value: '40+ 稳定节点' },
-      { label: '协议支持', value: 'Shadowsocks / Trojan' },
-      { label: '支持客户端', value: '全平台常用代理客户端' },
-      { label: '设备连接限制', value: '支持 5 台设备同时使用' },
-      { label: '流媒体解锁', value: '主流流媒体与社交平台全解锁' }
-    ],
-    routeGuide: {
-      summary: '云界线采用了均衡分配的负载设计，亚太节点延迟极低。',
-      eveningPeakStrategy: '晚高峰优先选择「云界·香港 02」与「云界·台湾 01」，由于台湾节点负载相对更轻，看剧和 AI 会话速度极其亮眼。',
-      holidayStrategy: '节假日建议切换至「云界·新加坡 01」，利用边缘云清洗优势抵抗网络波动。',
-      scenarioRoutes: [
-        { scenario: '日常综合使用', primary: '云界·香港 01', backup: '云界·香港 02', latency: '26ms ~ 34ms', jitter: '< 1.2ms', notes: '低延迟无感浏览' },
-        { scenario: '流媒体追剧', primary: '云界·日本 01', backup: '云界·新加坡 01', latency: '48ms ~ 62ms', jitter: '< 2.0ms', notes: '4K 解锁稳定' },
-        { scenario: '长期备用应急', primary: '云界·随心包 (80G)', backup: '云界·美西 01', latency: '35ms ~ 145ms', jitter: '< 3.0ms', notes: '断网急救必备' }
-      ],
-      topology: [
-        { step: '01. 用户本地宽带', detail: '国内电信/联通/移动', icon: '💻' },
-        { step: '02. 华南多线 BGP', detail: '智能动态路由接入', icon: '🏢' },
-        { step: '03. 大厂内网专线', detail: '跨省专线互联内网', icon: '⚡' },
-        { step: '04. 跨境高速出口', detail: '亚太各机房优质落地', icon: '🌐' },
-        { step: '05. 目标互联网服务', detail: '全球应用畅通', icon: '🎯' }
-      ]
-    },
-    benchmark: [
-      { node: '云界·香港 01', protocol: 'SS', ping: '26 ms', jitter: '1.1 ms', down: '468.2 Mbps', up: '96.5 Mbps', loss: '0.0%', status: 'S' },
-      { node: '云界·香港 02', protocol: 'Trojan', ping: '28 ms', jitter: '1.2 ms', down: '455.0 Mbps', up: '92.0 Mbps', loss: '0.0%', status: 'S' },
-      { node: '云界·日本 01', protocol: 'SS', ping: '53 ms', jitter: '1.5 ms', down: '440.8 Mbps', up: '85.4 Mbps', loss: '0.1%', status: 'S' }
-    ],
-    plans: [
-      { name: '云界年付小包', price: '¥67.2 / 年', original: '¥96 / 年', traffic: '60GB / 月', period: '年付', highlight: '轻度年付，低成本常备' },
-      { name: '轻云·基础版', price: '¥15.4 / 月', original: '¥22 / 月', traffic: '150GB / 月', period: '月付起', highlight: '150G 起步，性价比爆棚' },
-      { name: '凌云·进阶版', price: '¥28.0 / 月', original: '¥40 / 月', traffic: '300GB / 月', period: '月付起', highlight: '300G 充足配额，追剧无忧' },
-      { name: '御云·高级版', price: '¥46.2 / 月', original: '¥66 / 月', traffic: '600GB / 月', period: '月付起', highlight: '600G 超大档位，满足多设备' },
-      { name: '闲云·随心包', price: '¥69.3 / 一次性', original: '¥99 / 一次性', traffic: '80GB 总量', period: '不过期', highlight: '不过期备用包，常备无忧' },
-      { name: '悠云·长享包', price: '¥139.3 / 一次性', original: '¥199 / 一次性', traffic: '200GB 总量', period: '不过期', highlight: '200G 超大备用池' }
-    ],
-    pros: [
-      '基础版直接给到 150GB 月流量，性价比在专线机场中极为突出',
-      '兼备常规月付与一次性流量包，适应不同用户群体的灵活需求',
-      '全线支持 Shadowsocks 与 Trojan，与各大现代客户端高度兼容'
-    ],
-    cons: [
-      '高峰期极个别冷门节点有维护时差，建议主流节点为主',
-      '暂不支持按小时计费'
-    ],
-    faqs: [
-      {
-        q: '150GB 适合怎样的使用场景？',
-        a: '150GB 适合每天进行日常网页浏览、社交软件办公、观看 1-2 小时 1080P/4K 流媒体视频的普通个人用户，一个月完全够用。'
-      }
-    ]
-  },
-  {
-    rank: 5,
-    slug: 'liulianyun',
-    name: '榴莲云',
-    logo: 'liulianyun.png',
-    tag: '大流量优选',
-    slogan: '超大流量高性价比梯队 · 750GB 榴莲王霸气覆盖',
-    founded: '2022年5月',
-    operationalDuration: '稳定运营 4 年+',
-    lineType: '多入口负载中转 + IPLC 国际专线',
-    entryRegions: '华东/华南多线冗余调度',
-    protocols: ['Shadowsocks (SS)', 'Trojan'],
-    speedRating: 'S (晚高峰稳定 470Mbps+)',
-    lossRate: '< 0.1% (高抗拥堵)',
-    minPrice: '¥16.8 / 月起 (折后)',
-    coupon: {
-      code: 'll88',
-      discount: '7 折',
-      note: '结算时输入专属优惠码 ll88 享受 7 折优惠'
-    },
-    affUrl: 'https://chaore01.liulianyunaff.com/#/?code=MNqUefcg',
-    fit: '适合重度影音追剧、远程大文件同步、家庭多台设备共享及大流量刚需读者。',
-    intro: '榴莲云是针对“大流量刚需用户”量身定做的专线服务商。许多机场套餐在 200GB 以上价格便成倍翻涨，而榴莲云主打大带宽与大容量阶梯，其顶级档位「榴莲王」折后仅需 ¥70/月即可坐拥 750GB 月流量，折合每 GB 单价极低，同时支持多设备连接不卡顿。',
-    specs: [
-      { label: '成立时间', value: '2022年5月 (稳定运营超4年)' },
-      { label: '线路架构', value: '多入口中转 + IPLC 专线' },
-      { label: '节点数量', value: '55+ 全球节点' },
-      { label: '协议支持', value: 'SS / Trojan' },
-      { label: '支持客户端', value: '小火箭 / Clash / v2rayN / sing-box' },
-      { label: '设备连接限制', value: '无苛刻设备并发限制' },
-      { label: '流媒体解锁', value: '全平台 4K 流畅解锁' }
-    ],
-    routeGuide: {
-      summary: '大流量用户最怕单点拥堵，榴莲云通过多组大流量通道保障高峰分流。',
-      eveningPeakStrategy: '晚高峰追剧推荐选择「榴莲·日本 4K 专线」或「榴莲·大流量 02」，带宽冗余充足，杜绝缓冲转圈。',
-      holidayStrategy: '节假日家庭聚会设备多，建议在路由器配置透明代理，分流走「新加坡 02」大水管通道。',
-      scenarioRoutes: [
-        { scenario: '重度影音 & 4K 追剧', primary: '榴莲·日本 4K 01', backup: '榴莲·新加坡 01', latency: '47ms ~ 58ms', jitter: '< 1.8ms', notes: '超大带宽通道' },
-        { scenario: '日常浏览与办公', primary: '榴莲·香港 01', backup: '榴莲·香港 02', latency: '25ms ~ 32ms', jitter: '< 1.1ms', notes: '低延迟响应' }
-      ],
-      topology: [
-        { step: '01. 多设备家庭/办公室', detail: 'PC / 手机 / 电视盒子', icon: '💻' },
-        { step: '02. 冗余多入口机房', detail: '动态抗封锁负载', icon: '🏢' },
-        { step: '03. IPLC 专线大容量骨干', detail: '多链路流量并行调度', icon: '⚡' },
-        { step: '04. 境外主流节点', detail: '香港 / 东京 / 新加坡 / 硅谷', icon: '🌐' },
-        { step: '05. 目标影音/网站', detail: '全天候 4K 流畅直达', icon: '🎯' }
-      ]
-    },
-    benchmark: [
-      { node: '榴莲·香港 01', protocol: 'SS', ping: '25 ms', jitter: '1.0 ms', down: '482.0 Mbps', up: '98.0 Mbps', loss: '0.0%', status: 'S+' },
-      { node: '榴莲·日本 4K 01', protocol: 'Trojan', ping: '51 ms', jitter: '1.4 ms', down: '475.6 Mbps', up: '90.2 Mbps', loss: '0.0%', status: 'S' }
-    ],
-    plans: [
-      { name: '榴莲年付特惠版', price: '¥67.2 / 年', original: '¥96 / 年', traffic: '60GB / 月', period: '年付', highlight: '年付小包，适合轻量备用' },
-      { name: '轻享包', price: '¥16.8 / 月', original: '¥24 / 月', traffic: '140GB / 月', period: '月付起', highlight: '140G 入门，性价比绝佳' },
-      { name: '畅享包', price: '¥28.0 / 月', original: '¥40 / 月', traffic: '260GB / 月', period: '月付起', highlight: '260G 惬意追剧主力档' },
-      { name: '尊享包', price: '¥42.0 / 月', original: '¥60 / 月', traffic: '420GB / 月', period: '月付起', highlight: '420G 高清大流量档位' },
-      { name: '榴莲王', price: '¥70.0 / 月', original: '¥100 / 月', traffic: '750GB / 月', period: '月付起', highlight: '750G 巨无霸配额，单G极便宜' }
-    ],
-    pros: [
-      '高流量档位性价比业界拔尖，最高 750GB/月满足一切重度需求',
-      '专线保障大文件下载与 4K 高画质秒开体验',
-      '输入专属优惠码 ll88 享受立减 30% 超值优惠'
-    ],
-    cons: [
-      '名字比较调侃，但技术架构十分扎实',
-      '不适合月消耗低于 30GB 的极微量用户（买大包略微过剩）'
-    ],
-    faqs: [
-      {
-        q: '榴莲王套餐可以给多个人一起使用吗？',
-        a: '可以，榴莲云支持合理的多设备同时连接，非常适合合租室友、一家多口或工作室成员共同使用。'
       }
     ]
   },
