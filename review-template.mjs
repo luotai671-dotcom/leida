@@ -137,7 +137,7 @@ export function generateReviewPage(data, allReviews) {
                   <div style="font-size:11px; margin-top:2px;">(享 ${esc(data.coupon.discount)} 结算特惠)</div>
                 </div>
               ` : ''}
-              <a class="review-cta-btn" href="${data.affUrl}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+              <a class="review-cta-btn" href="${data.affUrl}" target="_blank" rel="nofollow sponsored noopener noreferrer">
                 前往 ${esc(data.name)} 官网注册 →
               </a>
             </div>
@@ -371,7 +371,7 @@ export function generateReviewPage(data, allReviews) {
             建议初次使用先选择短周期体验线路质量，满意后再考虑续订更长周期。记得在结账时填入本站专属优惠码享受折扣。
           </p>
           <div class="review-footer-actions">
-            <a class="review-btn-primary" href="${data.affUrl}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+            <a class="review-btn-primary" href="${data.affUrl}" target="_blank" rel="nofollow sponsored noopener noreferrer">
               访问 ${esc(data.name)} 官网开启注册 →
             </a>
             <a class="review-btn-ghost" href="/topics/recommend.html">
@@ -435,7 +435,7 @@ export function generateReviewIndexPage(allReviews) {
           <a class="btn-view-review" href="/reviews/${r.slug}.html">
             阅读独立测评报告 ↗
           </a>
-          <a class="btn-visit-site" href="${r.affUrl}" target="_blank" rel="noopener noreferrer nofollow sponsored">
+          <a class="btn-visit-site" href="${r.affUrl}" target="_blank" rel="nofollow sponsored noopener noreferrer">
             前往官网注册
           </a>
         </div>
