@@ -80,7 +80,7 @@ const write=(p,s)=>{
     for(const [code,href] of Object.entries(registrations)) enhanced=enhanced.replace(`data-code="${code}">复制优惠码</button>`,`data-code="${code}">复制优惠码</button><a class="coupon-register" href="${href}" target="_blank" rel="nofollow sponsored noopener noreferrer">前往官网注册 →</a>`);
   }
   if(p==='topics/recommend.html') enhanced=enhanced.replaceAll('新增四家','另外四家').replace('新增推荐入口','更多老牌入口').replace('以下服务目前仅展示注册入口','以下老牌服务目前仅展示注册入口');
-  if(p==='about.html') enhanced=enhanced.replace('</main>','<section class="legal-contact"><div class="wrap legal-contact-grid"><div class="disclaimer-panel"><span>DISCLAIMER</span><h2>免责声明</h2><p>本站内容仅用于一般网络知识、软件使用与隐私安全教育，不构成法律、投资或购买建议。本站不提供、不销售、不代购任何节点、订阅或翻墙服务，也不保证第三方软件、服务或外部链接永久可用、绝对安全或适用于所有地区。</p><p>读者应自行了解并遵守所在地法律法规、单位网络政策和第三方平台条款。因使用本站信息、下载第三方软件、访问外部链接或自行配置网络工具产生的任何直接或间接损失，由使用者自行承担。外部项目的功能、价格、隐私政策与安全性由其开发者负责。</p><p>本站会尽力核对信息，但软件版本、项目地址和政策可能随时变化。如发现内容失效或存在安全问题，请通过下方 Telegram 联系。</p></div><aside class="contact-panel"><span>CONTACT</span><h2>联系机场雷达</h2><p>内容勘误、失效链接、安全提醒与合作咨询。</p><a class="tg-button" href="https://t.me/ace668811" target="_blank" rel="noopener noreferrer" aria-label="通过 Telegram 联系机场雷达">点击联系 Telegram →</a><small>请勿发送订阅链接、密码、验证码或其他敏感信息。</small></aside></div></section></main>');
+  if(p==='about.html') enhanced=enhanced.replace('</main>','<section class="legal-contact"><div class="wrap legal-contact-grid"><div class="disclaimer-panel"><span>DISCLAIMER</span><h2>免责声明</h2><p>本站内容仅用于一般网络知识、软件使用与隐私安全教育，不构成法律、投资或购买建议。本站不提供、不销售、不代购任何节点、订阅或翻墙服务，也不保证第三方软件、服务或外部链接永久可用、绝对安全或适用于所有地区。</p><p>读者应自行了解并遵守所在地法律法规、单位网络政策和第三方平台条款。因使用本站信息、下载第三方软件、访问外部链接或自行配置网络工具产生的任何直接或间接损失，由使用者自行承担。外部项目的功能、价格、隐私政策与安全性由其开发者负责。</p><p>本站会尽力核对信息，但软件版本、项目地址和政策可能随时变化。如发现内容失效或存在安全问题，请通过下方 Telegram 联系。</p></div><aside class="contact-panel"><span>CONTACT</span><h2>联系机场雷达</h2><p>内容勘误、失效链接、安全提醒与合作咨询。</p><a class="tg-button" href="https://t.me/shandianjiaoliu" target="_blank" rel="noopener noreferrer" aria-label="通过 Telegram 联系机场雷达">点击联系 Telegram →</a><small>请勿发送订阅链接、密码、验证码或其他敏感信息。</small></aside></div></section></main>');
   if(p.endsWith('.html')) enhanced=enhanced.replace('</head>','<link rel="stylesheet" href="/assets/cover-styles.css"></head>');
   if(p.endsWith('.html')) enhanced=enhanced.replace('</head>','<link rel="stylesheet" href="/assets/tech-theme.css"></head>');
   if(p.endsWith('.html')) enhanced=enhanced.replace('</head>','<link rel="stylesheet" href="/assets/extra-pages.css"></head>');
@@ -119,6 +119,7 @@ write('index.html',layout({title:'机场雷达｜VPN 机场、小火箭与代理
 const headings=['先把概念说清楚','实际使用时怎么判断','一套不会越查越乱的步骤','容易踩的坑','我们的建议'];
 
 function getArticleSections(a){
+  if (a.customSections) return a.customSections;
   const kw = a.keywords.split(',').map(s=>s.trim());
   const primaryKw = kw[0] || a.title;
   const secondaryKw = kw.slice(1, 4).join('、') || '协议配置与分流机制';

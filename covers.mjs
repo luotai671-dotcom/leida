@@ -50,7 +50,9 @@ const visuals={
 'geosite-geoip-rules-customization':base.globe+'<rect x="520" y="170" width="160" height="70" rx="12" fill="none" stroke="currentColor" stroke-width="16"/><text x="600" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="900" fill="currentColor">GEO</text>',
 'bgp-tunnel-relay-principle':base.globe+'<line x1="160" y1="315" x2="600" y2="315" stroke="currentColor" stroke-width="18" stroke-dasharray="16 12"/><circle cx="160" cy="315" r="24" fill="currentColor"/><circle cx="600" cy="315" r="24" fill="currentColor"/>',
 'tiktok-crossborder-operation-network':base.phone+'<circle cx="600" cy="280" r="50" fill="none" stroke="currentColor" stroke-width="16"/><polygon points="590,260 620,280 590,300" fill="currentColor"/>',
-'speedtest-iperf3-loss-latency-master':base.speed+'<polyline points="200,510 320,440 420,490 530,370 640,430" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>'};
+'speedtest-iperf3-loss-latency-master':base.speed+'<polyline points="200,510 320,440 420,490 530,370 640,430" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>',
+'shadowrocket-fallback-auto-switch':base.phone+'<path d="M550 240 L620 180 L690 240 M620 180 V360" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><path d="M550 380 L620 440 L690 380 M620 440 V260" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>',
+'clash-verge-multi-subscription-merge':base.laptop+'<circle cx="560" cy="220" r="30" fill="none" stroke="currentColor" stroke-width="15"/><circle cx="640" cy="220" r="30" fill="none" stroke="currentColor" stroke-width="15"/><path d="M560 330 C560 270 640 270 640 330" fill="none" stroke="currentColor" stroke-width="16"/>'};
 
 export function generateCovers({topics,categories,destinations}){
   for(const article of topics){
