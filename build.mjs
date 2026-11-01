@@ -154,11 +154,14 @@ function getArticleSections(a){
 }
 
 function article(a){
-  const sectionParagraphs=getArticleSections(a);
-  const sections=headings.map((h,i)=>`<section id="s${i}"><h2>${h}</h2>${sectionParagraphs[i].map(x=>`<p>${x}</p>`).join('')}</section>`).join('');
+  const headingsList = a.customHeadings || headings;
+  const sectionParagraphs = a.customArticleHtml ? null : getArticleSections(a);
+  const sections = a.customArticleHtml || headings.map((h,i)=>`<section id="s${i}"><h2>${h}</h2>${sectionParagraphs[i].map(x=>`<p>${x}</p>`).join('')}</section>`).join('');
   const related=topics.filter(x=>x.category===a.category&&x.slug!==a.slug).slice(0,3);
   const schema=`<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Article",headline:a.title,description:a.dek,datePublished:a.date,dateModified:a.date,author:{"@type":"Organization",name:site.author},publisher:{"@type":"Organization",name:site.name},mainEntityOfPage:url('/articles/'+a.slug+'.html'),keywords:a.keywords})}</script><script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:'首页',item:site.url},{"@type":"ListItem",position:2,name:'文章',item:url('/articles/')},{"@type":"ListItem",position:3,name:a.title,item:url('/articles/'+a.slug+'.html')}]})}</script>`;
-  const body=`<div class="article-shell wrap"><article class="article"><div class="crumb"><a href="/index.html">首页</a> / <a href="/articles/index.html">文章</a> / ${categories[a.category].name}</div><header><span class="pill c-${a.category}">${categories[a.category].name}</span><h1>${a.title}</h1><p class="lead">${a.dek}</p><div class="byline"><span class="avatar">雷</span><span><b>${site.author}</b><small>更新于 ${a.date} · ${a.read} 分钟阅读 · 约1500字</small></span></div></header><div class="takeaway"><b>先说结论</b><p>${a.points[0]}</p></div>${sections}<div class="notice"><b>合规与安全提醒</b><p>请遵守所在地法律法规、单位网络政策和第三方服务条款。本文只提供一般技术信息，不构成法律意见，也不提供节点或绕过授权的服务。</p></div></article><aside class="toc"><b>本文目录</b>${headings.map((h,i)=>`<a href="#s${i}">${i+1}. ${h}</a>`).join('')}<div class="aside-box">不确定从哪查？<a href="/faq.html">查看 FAQ →</a></div></aside></div><section class="related wrap"><h2>继续阅读</h2><div class="grid">${related.map(card).join('')}</div></section>`;
+  const takeawayTitle = a.directAnswer ? 'Direct Answer 核心结论速览' : '先说结论';
+  const takeawayText = a.directAnswer || a.points[0];
+  const body=`<div class="article-shell wrap"><article class="article"><div class="crumb"><a href="/index.html">首页</a> / <a href="/articles/index.html">文章</a> / ${categories[a.category].name}</div><header><span class="pill c-${a.category}">${categories[a.category].name}</span><h1>${a.title}</h1><p class="lead">${a.dek}</p><div class="byline"><span class="avatar">雷</span><span><b>${site.author}</b><small>更新于 ${a.date} · ${a.read} 分钟阅读 · 约1500字</small></span></div></header><div class="takeaway"><b>${takeawayTitle}</b><p>${takeawayText}</p></div>${sections}<div class="notice"><b>合规与安全提醒</b><p>请遵守所在地法律法规、单位网络政策和第三方服务条款。本文只提供一般技术信息，不构成法律意见，也不提供节点或绕过授权的服务。</p></div></article><aside class="toc"><b>本文目录</b>${headingsList.map((h,i)=>`<a href="#s${i}">${i+1}. ${h}</a>`).join('')}<div class="aside-box">不确定从哪查？<a href="/faq.html">查看 FAQ →</a></div></aside></div><section class="related wrap"><h2>继续阅读</h2><div class="grid">${related.map(card).join('')}</div></section>`;
   return layout({title:`${a.title}｜机场雷达`,desc:a.dek,pathName:`/articles/${a.slug}.html`,body,schema,type:'article'});
 }
 topics.forEach(a=>write(`articles/${a.slug}.html`,article(a)));
@@ -530,15 +533,18 @@ write('reviews/index.html', layout({
 // Build article compat DB for /article and /article.html query routing (?post=slug)
 const articleCompatDb = {};
 topics.forEach(a => {
-  const sectionParagraphs = getArticleSections(a);
-  const sections = headings.map((h,i)=>`<section id="s${i}"><h2>${h}</h2>${sectionParagraphs[i].map(x=>`<p>${x}</p>`).join('')}</section>`).join('');
+  const headingsList = a.customHeadings || headings;
+  const sectionParagraphs = a.customArticleHtml ? null : getArticleSections(a);
+  const sections = a.customArticleHtml || headings.map((h,i)=>`<section id="s${i}"><h2>${h}</h2>${sectionParagraphs[i].map(x=>`<p>${x}</p>`).join('')}</section>`).join('');
   const related = topics.filter(x=>x.category===a.category&&x.slug!==a.slug).slice(0,3);
   const articleIndex = topics.indexOf(a);
   const partnerIndex = ((articleIndex<0?0:articleIndex)*5+2)%articlePartners.length;
   const partner = articlePartners[partnerIndex];
   const partnerCard = `<aside class="article-partner"><img src="/assets/recommendations/${partner.logo}" alt="${partner.name} Logo" loading="lazy" width="96" height="96"><div><small>本文合作推荐</small><h2>${partner.name}</h2><p>${partner.line}。结算时输入优惠码 <b>${partner.code}</b>，活动规则以推荐页说明为准。</p></div><a href="/topics/recommend.html#provider-${partnerIndex+1}">查看推荐套餐 →</a></aside>`;
   const coverImg = `<figure class="article-cover"><img src="/assets/covers/${a.slug}.svg" alt="文章主题封面" width="1200" height="630"></figure>`;
-  const innerHtml = `<div class="article-shell wrap"><article class="article"><div class="crumb"><a href="/index.html">首页</a> / <a href="/articles/index.html">文章</a> / ${categories[a.category].name}</div>${coverImg}<header><span class="pill c-${a.category}">${categories[a.category].name}</span><h1>${a.title}</h1><p class="lead">${a.dek}</p><div class="byline"><span class="avatar">雷</span><span><b>${site.author}</b><small>更新于 ${a.date} · ${a.read} 分钟阅读 · 约1500字</small></span></div></header><div class="takeaway"><b>先说结论</b><p>${a.points[0]}</p></div>${sections}<div class="notice"><b>合规与安全提醒</b><p>请遵守所在地法律法规、单位网络政策和第三方服务条款。本文只提供一般技术信息，不构成法律意见，也不提供节点或绕过授权的服务。</p></div>${partnerCard}</article><aside class="toc"><b>本文目录</b>${headings.map((h,i)=>`<a href="#s${i}">${i+1}. ${h}</a>`).join('')}<div class="aside-box">不确定从哪查？<a href="/faq.html">查看 FAQ →</a></div></aside></div><section class="related wrap"><h2>继续阅读</h2><div class="grid">${related.map(card).join('')}</div></section>`;
+  const takeawayTitle = a.directAnswer ? 'Direct Answer 核心结论速览' : '先说结论';
+  const takeawayText = a.directAnswer || a.points[0];
+  const innerHtml = `<div class="article-shell wrap"><article class="article"><div class="crumb"><a href="/index.html">首页</a> / <a href="/articles/index.html">文章</a> / ${categories[a.category].name}</div>${coverImg}<header><span class="pill c-${a.category}">${categories[a.category].name}</span><h1>${a.title}</h1><p class="lead">${a.dek}</p><div class="byline"><span class="avatar">雷</span><span><b>${site.author}</b><small>更新于 ${a.date} · ${a.read} 分钟阅读 · 约1500字</small></span></div></header><div class="takeaway"><b>${takeawayTitle}</b><p>${takeawayText}</p></div>${sections}<div class="notice"><b>合规与安全提醒</b><p>请遵守所在地法律法规、单位网络政策和第三方服务条款。本文只提供一般技术信息，不构成法律意见，也不提供节点或绕过授权的服务。</p></div>${partnerCard}</article><aside class="toc"><b>本文目录</b>${headingsList.map((h,i)=>`<a href="#s${i}">${i+1}. ${h}</a>`).join('')}<div class="aside-box">不确定从哪查？<a href="/faq.html">查看 FAQ →</a></div></aside></div><section class="related wrap"><h2>继续阅读</h2><div class="grid">${related.map(card).join('')}</div></section>`;
   articleCompatDb[a.slug] = {
     slug: a.slug,
     title: a.title,
@@ -577,10 +583,26 @@ write('robots.txt',`User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`
 write('CNAME','jcleida.com\n');
 const INDEXNOW_KEY = '81fb9c6ec7be446016909f925e16c21f';
 write(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);
+const redirectGoObserve = `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>正在转向雷达推荐观测节点...</title><meta name="description" content="正在安全跳转至机场雷达经过双向路由审计的推荐观测节点与合规技术服务专区。"><meta http-equiv="refresh" content="0; url=/topics/recommend.html#provider-1"><link rel="canonical" href="https://jcleida.com/topics/recommend.html#provider-1"></head><body><p>正在跳转至雷达推荐节点... <a href="/topics/recommend.html#provider-1">点击手动前往</a></p></body></html>`;
+write('go/observe.html', redirectGoObserve);
+write('go/observe/index.html', redirectGoObserve);
+
+const redirectMethodology = `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>测评方法与标准｜机场雷达</title><meta name="description" content="机场雷达测评方法与标准专栏：包含延迟、抖动、丢包、晚高峰测速与双向路由审计标准。"><meta http-equiv="refresh" content="0; url=/topics/test.html"><link rel="canonical" href="https://jcleida.com/topics/test.html"></head><body><p>正在转向测评方法与标准专栏... <a href="/topics/test.html">点击立即前往</a></p></body></html>`;
+write('methodology.html', redirectMethodology);
+write('methodology/index.html', redirectMethodology);
+
+const redirectSecurity = `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>知识与安全专栏｜机场雷达</title><meta name="description" content="机场雷达知识与安全专栏：深入解析订阅安全、DNS防泄漏、WebRTC穿透与现代协议深度。"><meta http-equiv="refresh" content="0; url=/topics/security.html"><link rel="canonical" href="https://jcleida.com/topics/security.html"></head><body><p>正在转向知识与安全专栏... <a href="/topics/security.html">点击立即前往</a></p></body></html>`;
+write('security.html', redirectSecurity);
+write('security/index.html', redirectSecurity);
+
+const redirectReviews = `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>深度测评专区｜机场雷达</title><meta name="description" content="机场雷达十六家推荐机场独立深度测评：晚高峰测速、成立时间、拓扑选路图与性价比测评。"><meta http-equiv="refresh" content="0; url=/reviews/index.html"><link rel="canonical" href="https://jcleida.com/reviews/index.html"></head><body><p>正在转向深度测评专区... <a href="/reviews/index.html">点击立即前往</a></p></body></html>`;
+write('reviews.html', redirectReviews);
+
 const reviewPaths = ['/reviews/index.html', ...reviewsData.map(r => `/reviews/${r.slug}.html`)];
 const paths=['/','/articles/','/faq.html','/about.html','/alerts.html','/deals.html','/resources.html','/topics/recommend.html',...reviewPaths,...Object.keys(categories).map(k=>`/topics/${k}.html`),...topics.map(a=>`/articles/${a.slug}.html`)];
-write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p=>`  <url>\n    <loc>${url(p)}</loc>\n    <lastmod>2026-10-15</lastmod>\n  </url>`).join('\n')}\n</urlset>\n`);
-write('rss.xml',`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>${site.name}</title><link>${site.url}</link><description>${site.description}</description>${topics.slice(0,15).map(a=>`<item><title>${esc(a.title)}</title><link>${url('/articles/'+a.slug+'.html')}</link><guid>${url('/articles/'+a.slug+'.html')}</guid><pubDate>${new Date(a.date+'T08:00:00+08:00').toUTCString()}</pubDate><description>${esc(a.dek)}</description></item>`).join('')}</channel></rss>`);
+write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p=>`  <url>\n    <loc>${url(p)}</loc>\n    <lastmod>${p.includes('network-route-mtr')||p.includes('subscription-link-privacy')||p.includes('vless-reality')?'2026-11-01':'2026-10-15'}</lastmod>\n  </url>`).join('\n')}\n</urlset>\n`);
+const rssTopics = [...topics].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,15);
+write('rss.xml',`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>${site.name}</title><link>${site.url}</link><description>${site.description}</description>${rssTopics.map(a=>`<item><title>${esc(a.title)}</title><link>${url('/articles/'+a.slug+'.html')}</link><guid>${url('/articles/'+a.slug+'.html')}</guid><pubDate>${new Date(a.date+'T08:00:00+08:00').toUTCString()}</pubDate><description>${esc(a.dek)}</description></item>`).join('')}</channel></rss>`);
 console.log(`Built ${paths.length} pages in ${out}`);
 
 if (!process.argv.includes('--serve') && !process.env.npm_lifecycle_event && !process.argv.includes('--no-indexnow')) {

@@ -52,7 +52,10 @@ const visuals={
 'tiktok-crossborder-operation-network':base.phone+'<circle cx="600" cy="280" r="50" fill="none" stroke="currentColor" stroke-width="16"/><polygon points="590,260 620,280 590,300" fill="currentColor"/>',
 'speedtest-iperf3-loss-latency-master':base.speed+'<polyline points="200,510 320,440 420,490 530,370 640,430" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>',
 'shadowrocket-fallback-auto-switch':base.phone+'<path d="M550 240 L620 180 L690 240 M620 180 V360" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><path d="M550 380 L620 440 L690 380 M620 440 V260" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>',
-'clash-verge-multi-subscription-merge':base.laptop+'<circle cx="560" cy="220" r="30" fill="none" stroke="currentColor" stroke-width="15"/><circle cx="640" cy="220" r="30" fill="none" stroke="currentColor" stroke-width="15"/><path d="M560 330 C560 270 640 270 640 330" fill="none" stroke="currentColor" stroke-width="16"/>'};
+'clash-verge-multi-subscription-merge':base.laptop+'<circle cx="560" cy="220" r="30" fill="none" stroke="currentColor" stroke-width="15"/><circle cx="640" cy="220" r="30" fill="none" stroke="currentColor" stroke-width="15"/><path d="M560 330 C560 270 640 270 640 330" fill="none" stroke="currentColor" stroke-width="16"/>',
+'network-route-mtr-loss-diagnosis-guide':base.speed+'<polyline points="200,480 320,380 430,420 540,290 650,330" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><circle cx="540" cy="290" r="20" fill="currentColor"/>',
+'subscription-link-privacy-security-audit':base.shield+'<path d="M260 280 H510 M260 360 H450" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><circle cx="560" cy="320" r="45" fill="none" stroke="currentColor" stroke-width="16"/>',
+'vless-reality-active-probing-deep-dive':base.globe+'<polygon points="520,200 620,270 520,340" fill="currentColor"/><circle cx="380" cy="315" r="140" fill="none" stroke="currentColor" stroke-width="14" stroke-dasharray="16 14"/>'};
 
 export function generateCovers({topics,categories,destinations}){
   for(const article of topics){

@@ -1,3 +1,5 @@
+import { loadMarkdownArticles } from './markdown-loader.mjs';
+
 export const site = {
   name: '机场雷达',
   url: 'https://jcleida.com',
@@ -14,7 +16,7 @@ export const categories = {
   test: { name: '测速方法', color: '#e84545' }
 };
 
-export const topics = [
+const baseTopics = [
   ['vpn-jichang-guide','VPN 机场是什么？2026 新手避坑指南','guide','VPN机场,机场节点,代理订阅','第一次接触“机场”的人，常被订阅、节点、协议和倍率绕晕。这篇从钱花到哪里讲起。','机场并不是机场，也不是一款软件。它通常指提供代理节点与订阅链接的网络服务。','订阅链接像一张会更新的频道表；客户端负责读取频道表；节点是实际连接入口。三者缺一不可。','先看是否提供试用或短周期套餐，再看退款说明、工单速度和节点状态页。年付便宜，却把服务波动和停运风险一次性留给用户。','不要只盯峰值速度。晚高峰可用率、丢包、线路恢复速度，比凌晨跑出的漂亮数字更接近日常体验。'],
   ['shadowrocket-complete-guide','小火箭 Shadowrocket 使用教程：从安装到规则分流','shadowrocket','小火箭,Shadowrocket教程,iOS代理','一篇给普通 iPhone 用户的完整说明：买的是工具，不是流量；导入订阅后还要会选规则。','Shadowrocket 是 iOS 上的网络代理工具，中文用户常叫它“小火箭”。有人把“小火煎”当成它的误拼，搜索的其实是同一款应用。','安装后先导入可信来源的订阅，再选一个节点并打开连接。首次启动会要求添加 VPN 配置，这是 iOS 的系统权限提示。','日常建议使用规则模式，让本地网站直连、需要代理的请求再转发。全局模式适合短暂排错，不适合一直开着。','如果显示已连接却打不开网页，依次检查订阅是否过期、节点是否可用、系统时间、DNS 和当前 Wi‑Fi。不要反复删除应用。'],
   ['shadowrocket-subscribe','小火箭怎么添加订阅？扫码、链接与手动导入','shadowrocket','小火箭订阅,Shadowrocket订阅链接,节点导入','订阅导入并不难，难的是分清链接、节点和配置文件。本文把三种入口一次讲清。','最常见的方法是复制订阅链接，在 Shadowrocket 首页点击右上角加号，类型选择 Subscribe，再粘贴 URL。','二维码适合在另一台设备上展示时使用。扫码前确认二维码来源，陌生二维码可能导入恶意配置或把流量交给不可信服务器。','手动节点只适合参数明确的单个服务器。名称、地址、端口、密码与协议必须对应，少一个字符都可能连接失败。','导入成功后先更新订阅，再选择延迟较低的节点测试网页。延迟为零不代表速度无限，超时也不一定说明整个服务失效。'],
@@ -116,6 +118,8 @@ export const topics = [
     ]
   ]]
 ].map(([slug,title,category,keywords,dek,p1,p2,p3,p4,customSections],i)=>({slug,title,category,keywords,dek,points:[p1,p2,p3,p4],customSections,date:`2026-10-${String(Math.max(1, 15 - Math.floor(i / 4))).padStart(2,'0')}`,read:8+(i%5)}));
+
+export const topics = [...baseTopics, ...loadMarkdownArticles()];
 
 export { faqCategories, detailedFaqs, faqs } from './faq-data.mjs';
 
