@@ -25,7 +25,7 @@ export const reviewsData = [
       discount: '7 折',
       note: '结算时输入专属优惠码 yjx888 享受 7 折优惠'
     },
-    affUrl: 'https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91',
+    affUrl: 'https://chenpinga.yunjiexianaff.com/#/?code=rTCMGvQT',
     fit: '适合重视基础流量基线（150GB起步）、同时希望保留备用流量包的均衡实用型读者。',
     intro: '云界线是在资深玩家中以“高起步配置、弹性备用”著称的实用型机场。不同于许多服务商以 60-80GB 作为月付入门，云界线的月付基础档直接从 150GB 慷慨起步，且折后仅需 ¥15.4/月。同时，它同样提供了 80GB 与 200GB 的一次性不过期备用包，兼顾了主力与备用两条线。',
     specs: [
