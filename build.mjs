@@ -49,12 +49,12 @@ const nav=`<header class="top"><div class="nav wrap"><a class="brand" href="/ind
 const footer=`<footer><div class="wrap footer-grid"><div><a class="brand light" href="/index.html"><span class="radar"><i></i></span><b>机场雷达</b></a><p>${site.tagline}</p></div><div><b>浏览</b><a href="/articles/index.html">全部文章</a><a href="/faq.html">常见问题</a><a href="/about.html">编辑原则</a></div><div><b>提醒</b><p>本站不提供节点或代购服务。请遵守所在地法律与服务条款。</p></div></div><div class="wrap legal">© 2026 机场雷达 · 内容仅供一般信息参考</div></footer>`;
 function layout({title,desc,pathName='/',body,schema='',type='website'}){return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><link rel="shortcut icon" href="/assets/favicon.svg"><link rel="canonical" href="${url(pathName)}"><meta property="og:type" content="${type}"><meta property="og:site_name" content="${site.name}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url(pathName)}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/assets/styles.css"><link rel="alternate" type="application/rss+xml" title="机场雷达 RSS" href="/rss.xml"><script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"WebSite",name:site.name,url:site.url,description:site.description,inLanguage:'zh-CN'})}</script>${schema}</head><body>${nav}<main>${body}</main>${footer}<script>document.querySelector('.menu').onclick=()=>document.querySelector('header nav').classList.toggle('open')</script></body></html>`}
 const articlePartners=[
-  {name:'闪电鼠',code:'sd88',logo:'shandianshu.jpg',url:'https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo',line:'轻量入门到大流量档位均有覆盖'},
-  {name:'大佬云',code:'dly88',logo:'dalaoyun.png',url:'https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer',line:'月付、年付与一次性流量灵活搭配'},
-  {name:'神行加速',code:'sx0077',logo:'shenxing.png',url:'https://chaore01.shenxingaff.com/#/?code=iTjS2mVY',line:'流量档位清晰，适合持续使用需求'},
-  {name:'云界线',code:'yjx888',logo:'yunjiexian.png',url:'https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91',line:'常规月付与备用流量方案兼顾'},
-  {name:'榴莲云',code:'ll88',logo:'liulianyun.png',url:'https://chaore01.liulianyunaff.com/#/?code=MNqUefcg',line:'提供面向多设备用户的大流量档位'},
-  {name:'环球梯',code:'HQ66',logo:'huanqiuti.jpg',url:'https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8',line:'从学生轻量档到一次性流量均有选择'}
+  {name:'闪电鼠',slug:'shandianshu',code:'sd88',logo:'shandianshu.jpg',url:'/go/shandianshu',line:'轻量入门到大流量档位均有覆盖'},
+  {name:'大佬云',slug:'dalaoyun',code:'dly88',logo:'dalaoyun.png',url:'/go/dalaoyun',line:'月付、年付与一次性流量灵活搭配'},
+  {name:'神行加速',slug:'shenxing',code:'sx0077',logo:'shenxing.png',url:'/go/shenxing',line:'流量档位清晰，适合持续使用需求'},
+  {name:'云界线',slug:'yunjiexian',code:'yjx888',logo:'yunjiexian.png',url:'/go/yunjiexian',line:'常规月付与备用流量方案兼顾'},
+  {name:'榴莲云',slug:'liulianyun',code:'ll88',logo:'liulianyun.png',url:'/go/liulianyun',line:'提供面向多设备用户的大流量档位'},
+  {name:'环球梯',slug:'huanqiuti',code:'HQ66',logo:'huanqiuti.jpg',url:'/go/huanqiuti',line:'从学生轻量档到一次性流量均有选择'}
 ];
 const alertEditorial=`<section class="alert-editorial wrap"><div class="alert-editorial-head"><span>RISK HANDBOOK / 2026-09-30</span><h2>机场跑路前，通常不是毫无征兆</h2><p>单个节点故障、一次客服延迟或短时间官网维护，都不能直接等同于跑路。真正值得警惕的是多个异常同时出现，并持续超过正常维护周期。</p></div><div class="warning-signs"><article><b>01</b><h3>突然密集推长期套餐</h3><p>短时间反复推出三年、五年、永久套餐，配合倒计时和“最后一次”活动催促付款。</p><strong>应对：停止长期预付，只保留可承受损失的短周期。</strong></article><article><b>02</b><h3>支付方式越来越难追回</h3><p>原有支付方式消失，只接受虚拟币、私人转账或频繁变化的个人收款账户。</p><strong>应对：不要为了折扣绕开原有支付渠道。</strong></article><article><b>03</b><h3>官网和面板频繁换域名</h3><p>短期内多次迁移官网、订阅面板与官方群组，却没有完整、可交叉验证的迁移公告。</p><strong>应对：从旧官网、旧群公告和客服三处核验新地址。</strong></article><article><b>04</b><h3>客服与公告同时沉默</h3><p>工单、邮件、群组和状态页同时停止更新，故障期间没有原因、进度或预计恢复时间。</p><strong>应对：记录失联时间，不要重复充值测试账户。</strong></article><article><b>05</b><h3>节点大面积长期离线</h3><p>多个地区同时不可用，维护通知不断延期，恢复后又迅速重复故障。</p><strong>应对：保存测速、错误日志和节点状态截图。</strong></article><article><b>06</b><h3>余额、套餐或订单异常</h3><p>未到期套餐消失、余额清零、订阅令牌失效，后台订单记录也无法查询。</p><strong>应对：立即保存证据，并停止向账户追加余额。</strong></article><article><b>07</b><h3>退款规则突然收紧</h3><p>原本存在的退款入口被移除，客服只允许转余额、延期或更换套餐，不处理原路退款。</p><strong>应对：查看旧版条款，并咨询原支付渠道的争议流程。</strong></article><article><b>08</b><h3>用更多充值解决旧故障</h3><p>服务商要求购买“恢复包”“迁移包”或新套餐，才允许继续使用原本尚未到期的服务。</p><strong>应对：不要用第二笔付款挽救第一笔付款。</strong></article></div></section><section class="customer-worries"><div class="wrap"><div class="alert-editorial-head light"><span>USER CONCERNS</span><h2>用户真正担心的，不只是“还能不能连”</h2><p>服务异常时，用户往往同时面对资金、账号、隐私和工作中断风险。先把担忧拆开，才能知道下一步该做什么。</p></div><div class="worry-grid"><article><span>资金</span><h3>已经支付的钱还能退吗？</h3><p>先保存订单号、支付时间、金额、套餐说明和沟通记录，再查看原支付渠道是否提供投诉或争议处理。不要相信陌生人声称可以付费代追回。</p></article><article><span>隐私</span><h3>订阅链接会不会被他人利用？</h3><p>订阅地址通常包含账户令牌。发现服务异常后，不要把完整链接发到群聊或在线检测网站；若后台仍可访问，应重置订阅并退出不认识的设备。</p></article><article><span>账号</span><h3>复用的密码是否需要修改？</h3><p>如果机场账户密码与邮箱、社交平台或其他网站相同，应立即逐个更换，并为重要账号开启双重验证。</p></article><article><span>设备</span><h3>安装过的客户端和证书安全吗？</h3><p>删除来源不明的定制客户端，检查系统中的 VPN 配置、描述文件、根证书和管理员权限。官方客户端通常不需要安装陌生根证书。</p></article><article><span>工作</span><h3>明天还要远程办公怎么办？</h3><p>先准备与原服务无关的备用连接方案，保存必要的工作文件和登录恢复方式。不要等全部节点失效后才开始寻找替代。</p></article><article><span>判断</span><h3>到底是普通故障还是跑路？</h3><p>观察官网、面板、节点、客服、公告和退款六个维度。只有多个维度持续异常，风险才明显升高；单次宕机不应直接定性。</p></article></div></div></section><section class="alert-checklist wrap"><div><span>ACTION CHECKLIST</span><h2>发现异常后的 30 分钟自保顺序</h2></div><ol><li><b>停止续费和追加余额</b><p>先控制可能继续扩大的资金损失。</p></li><li><b>保存订单与服务状态</b><p>截图订单、套餐期限、余额、公告、工单和错误页面。</p></li><li><b>更换复用密码</b><p>优先处理邮箱、支付账户和开启相同密码的重要平台。</p></li><li><b>检查设备配置</b><p>移除陌生证书、描述文件和来历不明的定制客户端。</p></li><li><b>准备独立备用方案</b><p>备用方案不要与原服务共享同一账号、群组或支付渠道。</p></li><li><b>等待可验证公告</b><p>只相信官网、状态页和原有官方频道，警惕私聊发送的新充值地址。</p></li></ol></section>`;
 const write=(p,s)=>{
@@ -76,7 +76,7 @@ const write=(p,s)=>{
   if(p==='alerts.html') enhanced=enhanced.replaceAll('2026-09-29','2026-10-15').replaceAll('2026-09-30','2026-10-15').replaceAll('2026-10-03','2026-10-15').replaceAll('2026-10-08','2026-10-15').replace('</main>',alertEditorial+'</main>');
   if(p==='topics/shadowrocket.html') enhanced=enhanced.replace('<section class="section wrap">','<section class="download-hub wrap"><div class="download-head"><span>OFFICIAL DOWNLOADS</span><h2>客户端官方下载</h2><p>只使用官方商店或项目发布页，避免第三方重打包、植入广告或篡改版本。</p></div><div class="download-grid"><article class="download-card"><div class="download-icon rocket-mark">↗</div><div><small>iPhone / iPad / Mac</small><h3>Shadowrocket 小火箭</h3><p>Apple App Store 官方版本。软件本身不包含节点或订阅服务。</p><a href="https://apps.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="noopener noreferrer nofollow">前往 App Store 官方下载 →</a></div></article><article class="download-card"><div class="download-icon clash-mark">◇</div><div><small>Windows / macOS / Linux</small><h3>Clash Verge Rev</h3><p>项目目前通过 GitHub Releases 发布，请根据系统和处理器架构选择安装包。</p><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener noreferrer nofollow">前往 GitHub 官方发布页 →</a></div></article></div><div class="download-warning"><b>安全提示</b><span>不要下载所谓“内置节点版”“永久免费破解版”，也不要向陌生安装包授予证书、VPN 或管理员权限。</span></div></section><section class="section wrap">');
   if(p==='deals.html'){
-    const registrations={sd88:'https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo',dly88:'https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer',sx0077:'https://chaore01.shenxingaff.com/#/?code=iTjS2mVY',yjx888:'https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91',ll88:'https://chaore01.liulianyunaff.com/#/?code=MNqUefcg',HQ66:'https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8'};
+    const registrations={sd88:'/go/shandianshu',dly88:'/go/dalaoyun',sx0077:'/go/shenxing',yjx888:'/go/yunjiexian',ll88:'/go/liulianyun',HQ66:'/go/huanqiuti'};
     for(const [code,href] of Object.entries(registrations)) enhanced=enhanced.replace(`data-code="${code}">复制优惠码</button>`,`data-code="${code}">复制优惠码</button><a class="coupon-register" href="${href}" target="_blank" rel="nofollow sponsored noopener noreferrer">前往官网注册 →</a>`);
   }
   if(p==='topics/recommend.html') enhanced=enhanced.replaceAll('新增四家','另外四家').replace('新增推荐入口','更多老牌入口').replace('以下服务目前仅展示注册入口','以下老牌服务目前仅展示注册入口');
@@ -481,31 +481,31 @@ for(const [key,cat] of Object.entries(categories)){const subset=topics.filter(a=
 const recommendedSlugs=['airport-buying-checklist','node-selection','node-speed-test','free-vpn-risk','airport-running-risk','streaming-nodes','multi-device-setup','vpn-jichang-guide'];
 const recommended=topics.filter(article=>recommendedSlugs.includes(article.slug));
 const providers=[
-  {rank:1,name:'闪电鼠',logo:'shandianshu.jpg',tag:'综合首选',code:'sd88',url:'https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo',feature:'从轻量入门到 500GB 大流量档位都覆盖，价格梯度直观，适合希望一站式完成日常浏览、影音与多设备使用的读者。',fit:'适合第一次选择机场、重视套餐均衡度的人群',points:['60GB 年付小包适合轻量用户','120GB 至 500GB 月付档位清晰','输入专属码后统一按 7 折结算'],plans:[['限时钜惠小包','¥67.2/年','¥96/年','60GB/月'],['轻快版','¥15.4/月','¥22/月','120GB/月'],['疾速版','¥28/月','¥40/月','250GB/月'],['雷霆版','¥49/月','¥70/月','500GB/月']]},
-  {rank:2,name:'大佬云',logo:'dalaoyun.png',tag:'套餐丰富',code:'dly88',url:'https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer',feature:'月付、年付与一次性流量包同时提供，选择空间更大。轻量用户可以控制预算，大流量用户也能找到 600GB 档位。',fit:'适合希望灵活切换周期、需要一次性流量包的人群',points:['130GB 至 600GB 月付套餐','提供 78GB 与 160GB 一次性流量','不同使用周期更容易匹配预算'],plans:[['年付活动包','¥67.2/年','¥96/年','60GB/月'],['初云·入门版','¥16.1/月','¥23/月','130GB/月'],['凌云·基础版','¥30.1/月','¥43/月','300GB/月'],['御云·高级版','¥51.1/月','¥73/月','600GB/月'],['闲云·随心包','¥69.3/一次','¥99/一次','78GB 总量'],['悠云·长享包','¥139.3/一次','¥199/一次','160GB 总量']]},
-  {rank:3,name:'神行加速',logo:'shenxing.png',tag:'流量进阶',code:'sx0077',url:'https://chaore01.shenxingaff.com/#/?code=iTjS2mVY',feature:'套餐从 130GB 平稳提升到 520GB，档位数量不复杂，适合不想在大量套餐中反复比较、希望快速作出决定的用户。',fit:'适合影音、下载及中高流量使用需求',points:['130GB 入门档降低选择门槛','260GB 与 520GB 适合持续使用','年付特惠版兼顾轻量需求'],plans:[['神行·尝鲜包','¥16.1/月','¥23/月','130GB/月'],['神行·基础包','¥28/月','¥40/月','260GB/月'],['神行·尊享包','¥50.4/月','¥72/月','520GB/月'],['神行·年付特惠版','¥67.2/年','¥96/年','60GB/月']]},
-  {rank:4,name:'云界线',logo:'yunjiexian.png',tag:'弹性搭配',code:'yjx888',url:'https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91',feature:'既有 150GB、300GB、600GB 月付套餐，也有不按月重置的一次性流量包，适合流量使用不稳定或需要备用方案的人群。',fit:'适合用量波动明显、希望保留备用流量的人群',points:['150GB 起步的月付选择','最高 600GB 月流量档位','80GB 与 200GB 一次性流量包'],plans:[['云界年付小包','¥67.2/年','¥96/年','60GB/月'],['轻云·基础版','¥15.4/月','¥22/月','150GB/月'],['凌云·进阶版','¥28/月','¥40/月','300GB/月'],['御云·高级版','¥46.2/月','¥66/月','600GB/月'],['闲云·随心包','¥69.3/一次','¥99/一次','80GB 总量'],['悠云·长享包','¥139.3/一次','¥199/一次','200GB 总量']]},
-  {rank:5,name:'榴莲云',logo:'liulianyun.png',tag:'大流量优选',code:'ll88',url:'https://chaore01.liulianyunaff.com/#/?code=MNqUefcg',feature:'月付套餐以流量递增为主，从 140GB 到 750GB 覆盖明显，适合视频观看、远程协作和多台设备同时在线的场景。',fit:'适合高频影音、多设备及大流量用户',points:['140GB 至 750GB 多档月流量','高流量套餐价格跨度清楚','年付小包适合轻量备用'],plans:[['榴莲年付特惠版','¥67.2/年','¥96/年','60GB/月'],['轻享包','¥16.8/月','¥24/月','140GB/月'],['畅享包','¥28/月','¥40/月','260GB/月'],['尊享包','¥42/月','¥60/月','420GB/月'],['榴莲王','¥70/月','¥100/月','750GB/月']]},
-  {rank:6,name:'环球梯',logo:'huanqiuti.jpg',tag:'场景覆盖',code:'HQ66',url:'https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8',feature:'同时覆盖学生轻量档、常规月付档和一次性流量包，适合按场景挑选，不必为了偶尔使用直接购买过大的长期套餐。',fit:'适合学生、轻量使用与临时大流量需求',points:['120GB 至 600GB 常规月付','80GB 与 400GB 一次性流量','不同预算都能找到对应档位'],plans:[['环球学生餐','¥67.2/年','¥96/年','60GB/月'],['环球轻享','¥15.4/月','¥22/月','120GB/月'],['环球畅游','¥27.3/月','¥39/月','240GB/月'],['环球尊享','¥48.3/月','¥69/月','600GB/月'],['环球随行包','¥69.3/一次','¥99/一次','80GB 总量'],['环球灵活包','¥209.3/一次','¥299/一次','400GB 总量']]}
+  {rank:1,slug:'shandianshu',name:'闪电鼠',logo:'shandianshu.jpg',tag:'综合首选',code:'sd88',targetUrl:'https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo',url:'/go/shandianshu',feature:'从轻量入门到 500GB 大流量档位都覆盖，价格梯度直观，适合希望一站式完成日常浏览、影音与多设备使用的读者。',fit:'适合第一次选择机场、重视套餐均衡度的人群',points:['60GB 年付小包适合轻量用户','120GB 至 500GB 月付档位清晰','输入专属码后统一按 7 折结算'],plans:[['限时钜惠小包','¥67.2/年','¥96/年','60GB/月'],['轻快版','¥15.4/月','¥22/月','120GB/月'],['疾速版','¥28/月','¥40/月','250GB/月'],['雷霆版','¥49/月','¥70/月','500GB/月']]},
+  {rank:2,slug:'dalaoyun',name:'大佬云',logo:'dalaoyun.png',tag:'套餐丰富',code:'dly88',targetUrl:'https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer',url:'/go/dalaoyun',feature:'月付、年付与一次性流量包同时提供，选择空间更大。轻量用户可以控制预算，大流量用户也能找到 600GB 档位。',fit:'适合希望灵活切换周期、需要一次性流量包的人群',points:['130GB 至 600GB 月付套餐','提供 78GB 与 160GB 一次性流量','不同使用周期更容易匹配预算'],plans:[['年付活动包','¥67.2/年','¥96/年','60GB/月'],['初云·入门版','¥16.1/月','¥23/月','130GB/月'],['凌云·基础版','¥30.1/月','¥43/月','300GB/月'],['御云·高级版','¥51.1/月','¥73/月','600GB/月'],['闲云·随心包','¥69.3/一次','¥99/一次','78GB 总量'],['悠云·长享包','¥139.3/一次','¥199/一次','160GB 总量']]},
+  {rank:3,slug:'shenxing',name:'神行加速',logo:'shenxing.png',tag:'流量进阶',code:'sx0077',targetUrl:'https://chaore01.shenxingaff.com/#/?code=iTjS2mVY',url:'/go/shenxing',feature:'套餐从 130GB 平稳提升到 520GB，档位数量不复杂，适合不想在大量套餐中反复比较、希望快速作出决定的用户。',fit:'适合影音、下载及中高流量使用需求',points:['130GB 入门档降低选择门槛','260GB 与 520GB 适合持续使用','年付特惠版兼顾轻量需求'],plans:[['神行·尝鲜包','¥16.1/月','¥23/月','130GB/月'],['神行·基础包','¥28/月','¥40/月','260GB/月'],['神行·尊享包','¥50.4/月','¥72/月','520GB/月'],['神行·年付特惠版','¥67.2/年','¥96/年','60GB/月']]},
+  {rank:4,slug:'yunjiexian',name:'云界线',logo:'yunjiexian.png',tag:'弹性搭配',code:'yjx888',targetUrl:'https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91',url:'/go/yunjiexian',feature:'既有 150GB、300GB、600GB 月付套餐，也有不按月重置的一次性流量包，适合流量使用不稳定或需要备用方案的人群。',fit:'适合用量波动明显、希望保留备用流量的人群',points:['150GB 起步的月付选择','最高 600GB 月流量档位','80GB 与 200GB 一次性流量包'],plans:[['云界年付小包','¥67.2/年','¥96/年','60GB/月'],['轻云·基础版','¥15.4/月','¥22/月','150GB/月'],['凌云·进阶版','¥28/月','¥40/月','300GB/月'],['御云·高级版','¥46.2/月','¥66/月','600GB/月'],['闲云·随心包','¥69.3/一次','¥99/一次','80GB 总量'],['悠云·长享包','¥139.3/一次','¥199/一次','200GB 总量']]},
+  {rank:5,slug:'liulianyun',name:'榴莲云',logo:'liulianyun.png',tag:'大流量优选',code:'ll88',targetUrl:'https://chaore01.liulianyunaff.com/#/?code=MNqUefcg',url:'/go/liulianyun',feature:'月付套餐以流量递增为主，从 140GB 到 750GB 覆盖明显，适合视频观看、远程协作和多台设备同时在线的场景。',fit:'适合高频影音、多设备及大流量用户',points:['140GB 至 750GB 多档月流量','高流量套餐价格跨度清楚','年付小包适合轻量备用'],plans:[['榴莲年付特惠版','¥67.2/年','¥96/年','60GB/月'],['轻享包','¥16.8/月','¥24/月','140GB/月'],['畅享包','¥28/月','¥40/月','260GB/月'],['尊享包','¥42/月','¥60/月','420GB/月'],['榴莲王','¥70/月','¥100/月','750GB/月']]},
+  {rank:6,slug:'huanqiuti',name:'环球梯',logo:'huanqiuti.jpg',tag:'场景覆盖',code:'HQ66',targetUrl:'https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8',url:'/go/huanqiuti',feature:'同时覆盖学生轻量档、常规月付档和一次性流量包，适合按场景挑选，不必为了偶尔使用直接购买过大的长期套餐。',fit:'适合学生、轻量使用与临时大流量需求',points:['120GB 至 600GB 常规月付','80GB 与 400GB 一次性流量','不同预算都能找到对应档位'],plans:[['环球学生餐','¥67.2/年','¥96/年','60GB/月'],['环球轻享','¥15.4/月','¥22/月','120GB/月'],['环球畅游','¥27.3/月','¥39/月','240GB/月'],['环球尊享','¥48.3/月','¥69/月','600GB/月'],['环球随行包','¥69.3/一次','¥99/一次','80GB 总量'],['环球灵活包','¥209.3/一次','¥299/一次','400GB 总量']]}
 ];
 const providerCards=providers.map(p=>{
-  const rSlug = reviewsData.find(r=>r.rank===p.rank)?.slug || 'shandianshu';
+  const rSlug = reviewsData.find(r=>r.name===p.name||r.slug===p.slug)?.slug || p.slug;
   return `<article class="provider-card rank-${p.rank}" id="provider-${p.rank}"><header><div class="provider-rank"><small>推荐排名</small><b>${String(p.rank).padStart(2,'0')}</b></div><div class="provider-logo"><img src="/assets/recommendations/${p.logo}" alt="${p.name} Logo" loading="lazy" width="240" height="240"></div><div class="provider-name"><span class="provider-tag tag-${p.rank}">${p.tag}</span><h2>${p.name}</h2><p>${p.feature}</p><div class="provider-fit">适合人群：${p.fit}</div></div><div class="provider-coupon"><small>专属 7 折码</small><b>${p.code}</b><div class="provider-actions"><a class="register-link" href="${p.url}" target="_blank" rel="nofollow sponsored noopener noreferrer">立即注册 →</a><a class="review-card-btn" href="/reviews/${rSlug}.html">深度测评 ↗</a><a class="deal-link" href="/deals.html#${p.name}">优惠说明</a></div></div></header><div class="provider-points">${p.points.map(x=>`<span>✓ ${x}</span>`).join('')}</div><div class="plan-list">${p.plans.map(([name,price,original,traffic])=>`<div class="plan-row"><b>${name}</b><div class="discount-price"><strong>${price}</strong><del>${original}</del></div><span>${traffic}</span></div>`).join('')}</div></article>`;
 }).join('');
 const extraProviders=[
-  {rank:7,name:'二猫云',logo:'/assets/recommendations/legacy/ermaoyun.svg',tag:'全专线',url:'https://server.ermaotztz3.homes/#/?code=Vf45aB7S',desc:'全线 IPLC/IEPL 国际私有专线，主打晚高峰稳定性与多设备无限制连接。套餐起步约 ¥20/月 (130GB流量)，另有年付小包等档位。'},
-  {rank:8,name:'光速云',logo:'/assets/recommendations/legacy/guangsuyun.svg',tag:'高性价比',url:'https://sjds8ds.guangsut.sbs/#/?code=RrfZcKT5',desc:'隧道中转与 IPLC 专线，覆盖 60+ 独立节点，适合日常流媒体与 AI 解锁。套餐起步约 ¥17/月 (120GB流量)。'},
-  {rank:9,name:'边缘节点',logo:'/assets/recommendations/legacy/yinjianjiedian.svg',tag:'边缘加密',url:'https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh',desc:'基于分布式边缘节点技术，优化连接延迟，提供稳定高速的网络接入。套餐起步约 ¥18/月 (130GB流量)。'},
-  {rank:10,name:'网际快车',logo:'/assets/recommendations/legacy/wangjikuwaiche.svg',tag:'极速协议',url:'https://johhhu.xn--66tw07h.com',desc:'支持 Hysteria 2 新一代协议，主打高吞吐大流量流媒体播放，提供 ¥6.8/一次 (20GB) 及月付包。'},
-  {rank:11,name:'大哥云',logo:'/assets/recommendations/legacy/dageyun.svg',tag:'老牌口碑',url:'https://a03.dgy02.com/#/register?code=vjFaxWEI',desc:'多年稳定运营的老牌专线机场，Trojan 协议与广泛节点覆盖。套餐起步约 ¥19.9/月 (120GB流量)。'},
-  {rank:12,name:'青云梯',logo:'/assets/recommendations/legacy/qingyunti.svg',tag:'内网专线',url:'https://inv02.qytaff.cc/register?aff=WkyKiasW',desc:'全线 IPLC 内网专线，多设备并发支持好，4K 流媒体与 AI 解锁稳定。套餐起步约 ¥25/月 (150GB流量) 或年付小包。'},
-  {rank:13,name:'泡芙云',logo:'/assets/recommendations/legacy/paofuyun.svg',tag:'老牌体验',url:'https://www.paofu.cloud/auth/register?code=qC0O',desc:'2018 年起运营的老牌服务商，IEPL/IPLC 专线，适合日常浏览与轻度下载。套餐起步约 ¥19/月 (150GB流量)。'},
-  {rank:14,name:'龙猫云',logo:'/assets/recommendations/legacy/longmaoyun.svg',tag:'新手友好',url:'https://inv06.lmaff01.cc/register?aff=PIB8x7dJ',desc:'全 IPLC 专线架构，新手文档齐全，支持解锁主流流媒体与 ChatGPT。套餐起步约 ¥15/月 (100GB流量)。'},
-  {rank:15,name:'Flybit',logo:'/assets/recommendations/legacy/flybit.svg',tag:'性价比高',url:'https://www.fastfastfast.buzz/#/register?code=tuAiVVbP',desc:'高性价比 IEPL 专线，提供稳定高速的传输与优秀的流媒体解锁。套餐起步约 ¥12/月 (100GB流量)。'},
-  {rank:16,name:'星岛梦',logo:'/assets/recommendations/legacy/xingdaomeng.svg',tag:'品质专线',url:'https://rweqr.xdmttt4.click/#/?code=lSVhHFnY',desc:'IEPL 专线高品质线路，低延迟抗封锁，适合跨境办公、游戏与 4K 影音。套餐起步约 ¥16/月 (100GB流量)。'}
+  {rank:7,slug:'ermaoyun',name:'二猫云',logo:'/assets/recommendations/legacy/ermaoyun.svg',tag:'全专线',targetUrl:'https://server.ermaotztz3.homes/#/?code=Vf45aB7S',url:'/go/ermaoyun',desc:'全线 IPLC/IEPL 国际私有专线，主打晚高峰稳定性与多设备无限制连接。套餐起步约 ¥20/月 (130GB流量)，另有年付小包等档位。'},
+  {rank:8,slug:'guangsuyun',name:'光速云',logo:'/assets/recommendations/legacy/guangsuyun.svg',tag:'高性价比',targetUrl:'https://sjds8ds.guangsut.sbs/#/?code=RrfZcKT5',url:'/go/guangsuyun',desc:'隧道中转与 IPLC 专线，覆盖 60+ 独立节点，适合日常流媒体与 AI 解锁。套餐起步约 ¥17/月 (120GB流量)。'},
+  {rank:9,slug:'edge-node',name:'边缘节点',logo:'/assets/recommendations/legacy/yinjianjiedian.svg',tag:'边缘加密',targetUrl:'https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh',url:'/go/edge-node',desc:'基于分布式边缘节点技术，优化连接延迟，提供稳定高速的网络接入。套餐起步约 ¥18/月 (130GB流量)。'},
+  {rank:10,slug:'wangjikuwaiche',name:'网际快车',logo:'/assets/recommendations/legacy/wangjikuwaiche.svg',tag:'极速协议',targetUrl:'https://johhhu.xn--66tw07h.com',url:'/go/wangjikuwaiche',desc:'支持 Hysteria 2 新一代协议，主打高吞吐大流量流媒体播放，提供 ¥6.8/一次 (20GB) 及月付包。'},
+  {rank:11,slug:'dageyun',name:'大哥云',logo:'/assets/recommendations/legacy/dageyun.svg',tag:'老牌口碑',targetUrl:'https://a03.dgy02.com/#/register?code=vjFaxWEI',url:'/go/dageyun',desc:'多年稳定运营的老牌专线机场，Trojan 协议与广泛节点覆盖。套餐起步约 ¥19.9/月 (120GB流量)。'},
+  {rank:12,slug:'qingyunti',name:'青云梯',logo:'/assets/recommendations/legacy/qingyunti.svg',tag:'内网专线',targetUrl:'https://inv02.qytaff.cc/register?aff=WkyKiasW',url:'/go/qingyunti',desc:'全线 IPLC 内网专线，多设备并发支持好，4K 流媒体与 AI 解锁稳定。套餐起步约 ¥25/月 (150GB流量) 或年付小包。'},
+  {rank:13,slug:'paofuyun',name:'泡芙云',logo:'/assets/recommendations/legacy/paofuyun.svg',tag:'老牌体验',targetUrl:'https://www.paofu.cloud/auth/register?code=qC0O',url:'/go/paofuyun',desc:'2018 年起运营的老牌服务商，IEPL/IPLC 专线，适合日常浏览与轻度下载。套餐起步约 ¥19/月 (150GB流量)。'},
+  {rank:14,slug:'longmaoyun',name:'龙猫云',logo:'/assets/recommendations/legacy/longmaoyun.svg',tag:'新手友好',targetUrl:'https://inv06.lmaff01.cc/register?aff=PIB8x7dJ',url:'/go/longmaoyun',desc:'全 IPLC 专线架构，新手文档齐全，支持解锁主流流媒体与 ChatGPT。套餐起步约 ¥15/月 (100GB流量)。'},
+  {rank:15,slug:'flybit',name:'Flybit',logo:'/assets/recommendations/legacy/flybit.svg',tag:'性价比高',targetUrl:'https://www.fastfastfast.buzz/#/register?code=tuAiVVbP',url:'/go/flybit',desc:'高性价比 IEPL 专线，提供稳定高速的传输与优秀的流媒体解锁。套餐起步约 ¥12/月 (100GB流量)。'},
+  {rank:16,slug:'xingdaomeng',name:'星岛梦',logo:'/assets/recommendations/legacy/xingdaomeng.svg',tag:'品质专线',targetUrl:'https://rweqr.xdmttt4.click/#/?code=lSVhHFnY',url:'/go/xingdaomeng',desc:'IEPL 专线高品质线路，低延迟抗封锁，适合跨境办公、游戏与 4K 影音。套餐起步约 ¥16/月 (100GB流量)。'}
 ];
 const extraProviderCards=extraProviders.map(p=>{
-  const rSlug = reviewsData.find(r=>r.rank===p.rank)?.slug || 'ermaoyun';
+  const rSlug = reviewsData.find(r=>r.name===p.name||r.slug===p.slug)?.slug || p.slug;
   return `<article class="extra-provider-card" id="provider-${p.rank}"><div class="extra-rank"><small>推荐排名</small><b>${String(p.rank).padStart(2,'0')}</b></div><div class="extra-mark"><img src="${p.logo}" alt="${p.name} Logo" loading="lazy" width="96" height="96" referrerpolicy="no-referrer"></div><div class="extra-provider-copy"><span>${p.tag}</span><h2>${p.name}</h2><p>${p.desc}</p></div><div class="extra-actions-box"><a class="extra-review-btn" href="/reviews/${rSlug}.html">深度测评 ↗</a><a class="extra-reg-btn" href="${p.url}" target="_blank" rel="nofollow sponsored noopener noreferrer">前往官网注册 →</a></div></article>`;
 }).join('');
 const airportJumpNav=`<section class="airport-jump-section"><div class="wrap"><div class="airport-jump-box"><div class="jump-box-head"><div class="jump-box-title"><div class="jump-icon">⚡</div><div><h3>指定机场直达导航</h3><span>点击任意机场标签，即刻定位跳转至对应详细信息与套餐</span></div></div><div class="jump-select-wrap"><label for="quickAirportSelect">快速跳转：</label><select id="quickAirportSelect" class="jump-select" onchange="if(this.value){location.hash=this.value;}"><option value="">-- 请选择目标机场 --</option><optgroup label="🔥 专属优惠机场 (1-6)"><option value="#provider-1">01. 闪电鼠 (7折/综合首选)</option><option value="#provider-2">02. 大佬云 (7折/套餐丰富)</option><option value="#provider-3">03. 神行加速 (7折/流量进阶)</option><option value="#provider-4">04. 云界线 (7折/弹性搭配)</option><option value="#provider-5">05. 榴莲云 (7折/大流量优选)</option><option value="#provider-6">06. 环球梯 (7折/场景覆盖)</option></optgroup><optgroup label="✨ 精选推荐机场 (7-16)"><option value="#provider-7">07. 二猫云 (全专线)</option><option value="#provider-8">08. 光速云 (高性价比)</option><option value="#provider-9">09. 边缘节点 (边缘加密)</option><option value="#provider-10">10. 网际快车 (极速协议)</option><option value="#provider-11">11. 大哥云 (老牌口碑)</option><option value="#provider-12">12. 青云梯 (内网专线)</option><option value="#provider-13">13. 泡芙云 (老牌体验)</option><option value="#provider-14">14. 龙猫云 (新手友好)</option><option value="#provider-15">15. Flybit (性价比高)</option><option value="#provider-16">16. 星岛梦 (品质专线)</option></optgroup></select></div></div><div class="jump-grid"><a href="#provider-1" class="jump-chip hot"><span class="chip-num">01</span>闪电鼠</a><a href="#provider-2" class="jump-chip hot"><span class="chip-num">02</span>大佬云</a><a href="#provider-3" class="jump-chip hot"><span class="chip-num">03</span>神行加速</a><a href="#provider-4" class="jump-chip hot"><span class="chip-num">04</span>云界线</a><a href="#provider-5" class="jump-chip hot"><span class="chip-num">05</span>榴莲云</a><a href="#provider-6" class="jump-chip hot"><span class="chip-num">06</span>环球梯</a><a href="#provider-7" class="jump-chip"><span class="chip-num">07</span>二猫云</a><a href="#provider-8" class="jump-chip"><span class="chip-num">08</span>光速云</a><a href="#provider-9" class="jump-chip"><span class="chip-num">09</span>边缘节点</a><a href="#provider-10" class="jump-chip"><span class="chip-num">10</span>网际快车</a><a href="#provider-11" class="jump-chip"><span class="chip-num">11</span>大哥云</a><a href="#provider-12" class="jump-chip"><span class="chip-num">12</span>青云梯</a><a href="#provider-13" class="jump-chip"><span class="chip-num">13</span>泡芙云</a><a href="#provider-14" class="jump-chip"><span class="chip-num">14</span>龙猫云</a><a href="#provider-15" class="jump-chip"><span class="chip-num">15</span>Flybit</a><a href="#provider-16" class="jump-chip"><span class="chip-num">16</span>星岛梦</a></div><div class="jump-review-banner"><div class="jump-review-banner-text"><strong>🔬 16 家推荐机场均已上线独立深度测评档案</strong><span>收录真实成立时间、晚高峰 20:30-22:30 实测数据、节假日避堵拓扑选路图与性价比测评</span></div><a href="/reviews/index.html" class="jump-review-banner-btn">浏览全部测评档案 →</a></div></div></div></section>`;
@@ -570,7 +570,37 @@ write('article/index.html', layout({
   body: compatPageBody
 }));
 
-const notFoundBody = `<section class="page-hero" style="padding:100px 0 60px;"><div class="wrap" style="text-align:center;"><span class="hero-badge" style="display:inline-block;margin-bottom:1rem;color:#38bdf8;background:rgba(56,189,248,0.1);padding:4px 12px;border-radius:20px;font-size:0.85rem;border:1px solid rgba(56,189,248,0.2);">404 / PAGE NOT FOUND</span><h1 style="font-size:2.8rem;margin-bottom:1.2rem;color:#f8fafc;">页面信号未检出</h1><p style="max-width:600px;margin:0 auto 2.5rem;color:#94a3b8;line-height:1.7;">您访问的页面链接可能已迁移、已更新或输入有误。雷达系统已为您准备好核心导航通道：</p><div class="actions" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;"><a class="btn primary" href="/index.html">返回雷达首页</a><a class="btn ghost" href="/articles/index.html">全部 ${topics.length} 篇文章</a><a class="btn ghost" href="/topics/recommend.html">推荐机场榜单</a><a class="btn ghost" href="/faq.html">常见问题 FAQ</a></div></div></section><section class="section wrap"><div class="section-head"><div><span>精选导航</span><h2>热门推荐文章</h2></div><a href="/articles/index.html">全部文章 →</a></div><div class="grid">${topics.slice(0,6).map(card).join('')}</div></section>`;
+const affRedirectList = [
+  { slug: 'shandianshu', name: '闪电鼠', target: 'https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo', aliases: ['sds', 'shandian'] },
+  { slug: 'dalaoyun', name: '大佬云', target: 'https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer', aliases: ['dly', 'dalao'] },
+  { slug: 'shenxing', name: '神行加速', target: 'https://chaore01.shenxingaff.com/#/?code=iTjS2mVY', aliases: ['sxjs'] },
+  { slug: 'yunjiexian', name: '云界线', target: 'https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91', aliases: ['yjx'] },
+  { slug: 'liulianyun', name: '榴莲云', target: 'https://chaore01.liulianyunaff.com/#/?code=MNqUefcg', aliases: ['lly', 'liulian'] },
+  { slug: 'huanqiuti', name: '环球梯', target: 'https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8', aliases: ['hqt', 'huanqiu'] },
+  { slug: 'ermaoyun', name: '二猫云', target: 'https://server.ermaotztz3.homes/#/?code=Vf45aB7S', aliases: ['emy'] },
+  { slug: 'guangsuyun', name: '光速云', target: 'https://sjds8ds.guangsut.sbs/#/?code=RrfZcKT5', aliases: ['gsy'] },
+  { slug: 'edge-node', name: '边缘节点', target: 'https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh', aliases: ['bianyuan', 'bianyuanjiedian', 'byjd', 'edgenova'] },
+  { slug: 'wangjikuwaiche', name: '网际快车', target: 'https://johhhu.xn--66tw07h.com', aliases: ['wangjikuaiche', 'wjkc'] },
+  { slug: 'dageyun', name: '大哥云', target: 'https://a03.dgy02.com/#/register?code=vjFaxWEI', aliases: ['dgy'] },
+  { slug: 'qingyunti', name: '青云梯', target: 'https://inv02.qytaff.cc/register?aff=WkyKiasW', aliases: ['qyt'] },
+  { slug: 'paofuyun', name: '泡芙云', target: 'https://www.paofu.cloud/auth/register?code=qC0O', aliases: ['pfy'] },
+  { slug: 'longmaoyun', name: '龙猫云', target: 'https://inv06.lmaff01.cc/register?aff=PIB8x7dJ', aliases: ['lmy'] },
+  { slug: 'flybit', name: 'Flybit', target: 'https://www.fastfastfast.buzz/#/register?code=tuAiVVbP', aliases: [] },
+  { slug: 'xingdaomeng', name: '星岛梦', target: 'https://rweqr.xdmttt4.click/#/?code=lSVhHFnY', aliases: ['xdm'] },
+  { slug: 'observe', name: '推荐观测入口', target: '/topics/recommend.html#provider-1', aliases: [] }
+];
+
+const affRoutesMap = {};
+affRedirectList.forEach(item => {
+  const allSlugs = [item.slug, ...(item.aliases || [])];
+  allSlugs.forEach(s => {
+    affRoutesMap[`/go/${s}`] = item.target;
+  });
+});
+
+const affFallbackScript = `<script>(function(){try{var p=window.location.pathname.toLowerCase().replace(/\\/+$/,'');var clean=p.replace(/\\.html$/,'');var routes=${JSON.stringify(affRoutesMap)};var target=routes[p]||routes[clean];if(target){window.location.replace(target);}}catch(e){}})();</script>`;
+
+const notFoundBody = `<section class="page-hero" style="padding:100px 0 60px;"><div class="wrap" style="text-align:center;"><span class="hero-badge" style="display:inline-block;margin-bottom:1rem;color:#38bdf8;background:rgba(56,189,248,0.1);padding:4px 12px;border-radius:20px;font-size:0.85rem;border:1px solid rgba(56,189,248,0.2);">404 / PAGE NOT FOUND</span><h1 style="font-size:2.8rem;margin-bottom:1.2rem;color:#f8fafc;">页面信号未检出</h1><p style="max-width:600px;margin:0 auto 2.5rem;color:#94a3b8;line-height:1.7;">您访问的页面链接可能已迁移、已更新或输入有误。雷达系统已为您准备好核心导航通道：</p><div class="actions" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;"><a class="btn primary" href="/index.html">返回雷达首页</a><a class="btn ghost" href="/articles/index.html">全部 ${topics.length} 篇文章</a><a class="btn ghost" href="/topics/recommend.html">推荐机场榜单</a><a class="btn ghost" href="/faq.html">常见问题 FAQ</a></div></div></section><section class="section wrap"><div class="section-head"><div><span>精选导航</span><h2>热门推荐文章</h2></div><a href="/articles/index.html">全部文章 →</a></div><div class="grid">${topics.slice(0,6).map(card).join('')}</div></section>${affFallbackScript}`;
 
 write('404.html', layout({
   title: '404 页面未找到｜机场雷达',
@@ -579,13 +609,56 @@ write('404.html', layout({
   body: notFoundBody
 }));
 
-write('robots.txt',`User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
-write('CNAME','jcleida.com\n');
+write('robots.txt', `User-agent: *\nDisallow: /go/\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
+write('CNAME', 'jcleida.com\n');
 const INDEXNOW_KEY = '81fb9c6ec7be446016909f925e16c21f';
 write(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);
-const redirectGoObserve = `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>正在转向雷达推荐观测节点...</title><meta name="description" content="正在安全跳转至机场雷达经过双向路由审计的推荐观测节点与合规技术服务专区。"><meta http-equiv="refresh" content="0; url=/topics/recommend.html#provider-1"><link rel="canonical" href="https://jcleida.com/topics/recommend.html#provider-1"></head><body><p>正在跳转至雷达推荐节点... <a href="/topics/recommend.html#provider-1">点击手动前往</a></p></body></html>`;
-write('go/observe.html', redirectGoObserve);
-write('go/observe/index.html', redirectGoObserve);
+
+function generateAffRedirectHtml(item, targetUrl) {
+  const isInternal = targetUrl.startsWith('/');
+  const canonicalUrl = isInternal ? `${site.url}${targetUrl}` : `${site.url}/go/${item.slug}`;
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><title>正在转向 ${item.name}...｜机场雷达</title><meta name="description" content="正在安全跳转至${item.name}官方认证通道，HTTP 302 临时重定向。"><meta http-equiv="refresh" content="0; url=${targetUrl}"><link rel="canonical" href="${canonicalUrl}"><script>window.location.replace(${JSON.stringify(targetUrl)});</script></head><body><p>正在通过 302 临时中转通道前往 <strong>${item.name}</strong> 官网...</p><p>若浏览器未自动跳转，请<a href="${targetUrl}" rel="nofollow sponsored noopener noreferrer">点击此处手动前往</a>。</p></body></html>`;
+}
+
+affRedirectList.forEach(item => {
+  const allSlugs = [item.slug, ...(item.aliases || [])];
+  const pageHtml = generateAffRedirectHtml(item, item.target);
+  allSlugs.forEach(s => {
+    write(`go/${s}.html`, pageHtml);
+    write(`go/${s}/index.html`, pageHtml);
+  });
+});
+
+const redirectsContent = `# AFF Outbound 302 Temporary Redirects (HTTP 302 Found, temporary status)
+${affRedirectList.map(item => {
+  const allSlugs = [item.slug, ...(item.aliases || [])];
+  return allSlugs.map(s => `/go/${s} ${item.target} 302\n/go/${s}.html ${item.target} 302`).join('\n');
+}).join('\n')}
+`;
+write('_redirects', redirectsContent);
+
+const vercelRedirects = [];
+affRedirectList.forEach(item => {
+  const allSlugs = [item.slug, ...(item.aliases || [])];
+  allSlugs.forEach(s => {
+    vercelRedirects.push({ source: `/go/${s}`, destination: item.target, permanent: false });
+    vercelRedirects.push({ source: `/go/${s}.html`, destination: item.target, permanent: false });
+  });
+});
+write('vercel.json', JSON.stringify({ redirects: vercelRedirects }, null, 2) + '\n');
+
+const htaccessContent = `<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# HTTP 302 Temporary Redirects for AFF routes
+${affRedirectList.map(item => {
+  const allSlugs = [item.slug, ...(item.aliases || [])];
+  return allSlugs.map(s => `RewriteRule ^go/${s}(\\.html)?$ ${item.target} [R=302,L]`).join('\n');
+}).join('\n')}
+</IfModule>
+`;
+write('.htaccess', htaccessContent);
 
 const redirectMethodology = `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>测评方法与标准｜机场雷达</title><meta name="description" content="机场雷达测评方法与标准专栏：包含延迟、抖动、丢包、晚高峰测速与双向路由审计标准。"><meta http-equiv="refresh" content="0; url=/topics/test.html"><link rel="canonical" href="https://jcleida.com/topics/test.html"></head><body><p>正在转向测评方法与标准专栏... <a href="/topics/test.html">点击立即前往</a></p></body></html>`;
 write('methodology.html', redirectMethodology);

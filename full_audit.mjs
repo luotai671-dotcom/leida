@@ -199,6 +199,27 @@ console.log('\n【5. 推荐机场测评 (16家) 与 FAQ 深度校验】');
 console.log(`- 测评报告数据总数: ${reviewsData.length} 篇 (全部生成独立页面: ${reviewsData.every(r => fs.existsSync(path.resolve('dist', 'reviews', `${r.slug}.html`)))})`);
 console.log(`- FAQ 问答项目总数: ${detailedFaqs.length} 条 (全部匹配 DOM id: ${detailedFaqs.every(f => fs.readFileSync('dist/faq.html', 'utf8').includes(`id="faq-${f.id}"`))})`);
 
+// 6. 推广链接 302 临时重定向与防爬虫 SEO 隔离审计
+console.log('\n【6. 推广外链 302 临时重定向与防爬虫 SEO 隔离审计】');
+const redirectsFile = fs.readFileSync('dist/_redirects', 'utf8');
+const vercelJson = JSON.parse(fs.readFileSync('dist/vercel.json', 'utf8'));
+const htaccessFile = fs.readFileSync('dist/.htaccess', 'utf8');
+const robotsTxt = fs.readFileSync('dist/robots.txt', 'utf8');
+
+const redirectsLines = redirectsFile.split('\n').filter(l => !l.trim().startsWith('#') && l.trim());
+const redirects301Count = redirectsLines.filter(l => /\b301\b/.test(l)).length;
+const redirects302Count = redirectsLines.filter(l => /\b302\b/.test(l)).length;
+const vercelPermanentTrue = vercelJson.redirects.filter(r => r.permanent === true).length;
+const vercelPermanentFalse = vercelJson.redirects.filter(r => r.permanent === false).length;
+const htaccess301Count = (htaccessFile.match(/\[R=301/g) || []).length;
+const htaccess302Count = (htaccessFile.match(/\[R=302/g) || []).length;
+const robotsHasDisallowGo = robotsTxt.includes('Disallow: /go/');
+
+console.log(`- _redirects 配置: 302 规则 ${redirects302Count} 条, 301 规则 ${redirects301Count} 条 (必须为 0)`);
+console.log(`- vercel.json 配置: 302 (permanent: false) ${vercelPermanentFalse} 条, 301 (permanent: true) ${vercelPermanentTrue} 条 (必须为 0)`);
+console.log(`- .htaccess 配置: 302 规则 ${htaccess302Count} 条, 301 规则 ${htaccess301Count} 条 (必须为 0)`);
+console.log(`- robots.txt 隔离保护: ${robotsHasDisallowGo ? '已启用 Disallow: /go/ 搜索引擎爬取阻断' : '未检测到 Disallow: /go/'}`);
+
 console.log('\n================================================================');
 console.log('                          自检完成                              ');
 console.log('================================================================\n');

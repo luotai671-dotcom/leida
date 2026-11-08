@@ -1,0 +1,404 @@
+{
+  "redirects": [
+    {
+      "source": "/go/shandianshu",
+      "destination": "https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo",
+      "permanent": false
+    },
+    {
+      "source": "/go/shandianshu.html",
+      "destination": "https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo",
+      "permanent": false
+    },
+    {
+      "source": "/go/sds",
+      "destination": "https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo",
+      "permanent": false
+    },
+    {
+      "source": "/go/sds.html",
+      "destination": "https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo",
+      "permanent": false
+    },
+    {
+      "source": "/go/shandian",
+      "destination": "https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo",
+      "permanent": false
+    },
+    {
+      "source": "/go/shandian.html",
+      "destination": "https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo",
+      "permanent": false
+    },
+    {
+      "source": "/go/dalaoyun",
+      "destination": "https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer",
+      "permanent": false
+    },
+    {
+      "source": "/go/dalaoyun.html",
+      "destination": "https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer",
+      "permanent": false
+    },
+    {
+      "source": "/go/dly",
+      "destination": "https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer",
+      "permanent": false
+    },
+    {
+      "source": "/go/dly.html",
+      "destination": "https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer",
+      "permanent": false
+    },
+    {
+      "source": "/go/dalao",
+      "destination": "https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer",
+      "permanent": false
+    },
+    {
+      "source": "/go/dalao.html",
+      "destination": "https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer",
+      "permanent": false
+    },
+    {
+      "source": "/go/shenxing",
+      "destination": "https://chaore01.shenxingaff.com/#/?code=iTjS2mVY",
+      "permanent": false
+    },
+    {
+      "source": "/go/shenxing.html",
+      "destination": "https://chaore01.shenxingaff.com/#/?code=iTjS2mVY",
+      "permanent": false
+    },
+    {
+      "source": "/go/sxjs",
+      "destination": "https://chaore01.shenxingaff.com/#/?code=iTjS2mVY",
+      "permanent": false
+    },
+    {
+      "source": "/go/sxjs.html",
+      "destination": "https://chaore01.shenxingaff.com/#/?code=iTjS2mVY",
+      "permanent": false
+    },
+    {
+      "source": "/go/yunjiexian",
+      "destination": "https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91",
+      "permanent": false
+    },
+    {
+      "source": "/go/yunjiexian.html",
+      "destination": "https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91",
+      "permanent": false
+    },
+    {
+      "source": "/go/yjx",
+      "destination": "https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91",
+      "permanent": false
+    },
+    {
+      "source": "/go/yjx.html",
+      "destination": "https://chaore01.yunjiexianaff.com/#/?code=g2PDAa91",
+      "permanent": false
+    },
+    {
+      "source": "/go/liulianyun",
+      "destination": "https://chaore01.liulianyunaff.com/#/?code=MNqUefcg",
+      "permanent": false
+    },
+    {
+      "source": "/go/liulianyun.html",
+      "destination": "https://chaore01.liulianyunaff.com/#/?code=MNqUefcg",
+      "permanent": false
+    },
+    {
+      "source": "/go/lly",
+      "destination": "https://chaore01.liulianyunaff.com/#/?code=MNqUefcg",
+      "permanent": false
+    },
+    {
+      "source": "/go/lly.html",
+      "destination": "https://chaore01.liulianyunaff.com/#/?code=MNqUefcg",
+      "permanent": false
+    },
+    {
+      "source": "/go/liulian",
+      "destination": "https://chaore01.liulianyunaff.com/#/?code=MNqUefcg",
+      "permanent": false
+    },
+    {
+      "source": "/go/liulian.html",
+      "destination": "https://chaore01.liulianyunaff.com/#/?code=MNqUefcg",
+      "permanent": false
+    },
+    {
+      "source": "/go/huanqiuti",
+      "destination": "https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8",
+      "permanent": false
+    },
+    {
+      "source": "/go/huanqiuti.html",
+      "destination": "https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8",
+      "permanent": false
+    },
+    {
+      "source": "/go/hqt",
+      "destination": "https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8",
+      "permanent": false
+    },
+    {
+      "source": "/go/hqt.html",
+      "destination": "https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8",
+      "permanent": false
+    },
+    {
+      "source": "/go/huanqiu",
+      "destination": "https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8",
+      "permanent": false
+    },
+    {
+      "source": "/go/huanqiu.html",
+      "destination": "https://chaore01.huanqiutiaff.com/#/?code=vXn9xcb8",
+      "permanent": false
+    },
+    {
+      "source": "/go/ermaoyun",
+      "destination": "https://server.ermaotztz3.homes/#/?code=Vf45aB7S",
+      "permanent": false
+    },
+    {
+      "source": "/go/ermaoyun.html",
+      "destination": "https://server.ermaotztz3.homes/#/?code=Vf45aB7S",
+      "permanent": false
+    },
+    {
+      "source": "/go/emy",
+      "destination": "https://server.ermaotztz3.homes/#/?code=Vf45aB7S",
+      "permanent": false
+    },
+    {
+      "source": "/go/emy.html",
+      "destination": "https://server.ermaotztz3.homes/#/?code=Vf45aB7S",
+      "permanent": false
+    },
+    {
+      "source": "/go/guangsuyun",
+      "destination": "https://sjds8ds.guangsut.sbs/#/?code=RrfZcKT5",
+      "permanent": false
+    },
+    {
+      "source": "/go/guangsuyun.html",
+      "destination": "https://sjds8ds.guangsut.sbs/#/?code=RrfZcKT5",
+      "permanent": false
+    },
+    {
+      "source": "/go/gsy",
+      "destination": "https://sjds8ds.guangsut.sbs/#/?code=RrfZcKT5",
+      "permanent": false
+    },
+    {
+      "source": "/go/gsy.html",
+      "destination": "https://sjds8ds.guangsut.sbs/#/?code=RrfZcKT5",
+      "permanent": false
+    },
+    {
+      "source": "/go/edge-node",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/edge-node.html",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/bianyuan",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/bianyuan.html",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/bianyuanjiedian",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/bianyuanjiedian.html",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/byjd",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/byjd.html",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/edgenova",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/edgenova.html",
+      "destination": "https://bcbhk40y.ztymforedge.lol/#/?code=HgD5cJEh",
+      "permanent": false
+    },
+    {
+      "source": "/go/wangjikuwaiche",
+      "destination": "https://johhhu.xn--66tw07h.com",
+      "permanent": false
+    },
+    {
+      "source": "/go/wangjikuwaiche.html",
+      "destination": "https://johhhu.xn--66tw07h.com",
+      "permanent": false
+    },
+    {
+      "source": "/go/wangjikuaiche",
+      "destination": "https://johhhu.xn--66tw07h.com",
+      "permanent": false
+    },
+    {
+      "source": "/go/wangjikuaiche.html",
+      "destination": "https://johhhu.xn--66tw07h.com",
+      "permanent": false
+    },
+    {
+      "source": "/go/wjkc",
+      "destination": "https://johhhu.xn--66tw07h.com",
+      "permanent": false
+    },
+    {
+      "source": "/go/wjkc.html",
+      "destination": "https://johhhu.xn--66tw07h.com",
+      "permanent": false
+    },
+    {
+      "source": "/go/dageyun",
+      "destination": "https://a03.dgy02.com/#/register?code=vjFaxWEI",
+      "permanent": false
+    },
+    {
+      "source": "/go/dageyun.html",
+      "destination": "https://a03.dgy02.com/#/register?code=vjFaxWEI",
+      "permanent": false
+    },
+    {
+      "source": "/go/dgy",
+      "destination": "https://a03.dgy02.com/#/register?code=vjFaxWEI",
+      "permanent": false
+    },
+    {
+      "source": "/go/dgy.html",
+      "destination": "https://a03.dgy02.com/#/register?code=vjFaxWEI",
+      "permanent": false
+    },
+    {
+      "source": "/go/qingyunti",
+      "destination": "https://inv02.qytaff.cc/register?aff=WkyKiasW",
+      "permanent": false
+    },
+    {
+      "source": "/go/qingyunti.html",
+      "destination": "https://inv02.qytaff.cc/register?aff=WkyKiasW",
+      "permanent": false
+    },
+    {
+      "source": "/go/qyt",
+      "destination": "https://inv02.qytaff.cc/register?aff=WkyKiasW",
+      "permanent": false
+    },
+    {
+      "source": "/go/qyt.html",
+      "destination": "https://inv02.qytaff.cc/register?aff=WkyKiasW",
+      "permanent": false
+    },
+    {
+      "source": "/go/paofuyun",
+      "destination": "https://www.paofu.cloud/auth/register?code=qC0O",
+      "permanent": false
+    },
+    {
+      "source": "/go/paofuyun.html",
+      "destination": "https://www.paofu.cloud/auth/register?code=qC0O",
+      "permanent": false
+    },
+    {
+      "source": "/go/pfy",
+      "destination": "https://www.paofu.cloud/auth/register?code=qC0O",
+      "permanent": false
+    },
+    {
+      "source": "/go/pfy.html",
+      "destination": "https://www.paofu.cloud/auth/register?code=qC0O",
+      "permanent": false
+    },
+    {
+      "source": "/go/longmaoyun",
+      "destination": "https://inv06.lmaff01.cc/register?aff=PIB8x7dJ",
+      "permanent": false
+    },
+    {
+      "source": "/go/longmaoyun.html",
+      "destination": "https://inv06.lmaff01.cc/register?aff=PIB8x7dJ",
+      "permanent": false
+    },
+    {
+      "source": "/go/lmy",
+      "destination": "https://inv06.lmaff01.cc/register?aff=PIB8x7dJ",
+      "permanent": false
+    },
+    {
+      "source": "/go/lmy.html",
+      "destination": "https://inv06.lmaff01.cc/register?aff=PIB8x7dJ",
+      "permanent": false
+    },
+    {
+      "source": "/go/flybit",
+      "destination": "https://www.fastfastfast.buzz/#/register?code=tuAiVVbP",
+      "permanent": false
+    },
+    {
+      "source": "/go/flybit.html",
+      "destination": "https://www.fastfastfast.buzz/#/register?code=tuAiVVbP",
+      "permanent": false
+    },
+    {
+      "source": "/go/xingdaomeng",
+      "destination": "https://rweqr.xdmttt4.click/#/?code=lSVhHFnY",
+      "permanent": false
+    },
+    {
+      "source": "/go/xingdaomeng.html",
+      "destination": "https://rweqr.xdmttt4.click/#/?code=lSVhHFnY",
+      "permanent": false
+    },
+    {
+      "source": "/go/xdm",
+      "destination": "https://rweqr.xdmttt4.click/#/?code=lSVhHFnY",
+      "permanent": false
+    },
+    {
+      "source": "/go/xdm.html",
+      "destination": "https://rweqr.xdmttt4.click/#/?code=lSVhHFnY",
+      "permanent": false
+    },
+    {
+      "source": "/go/observe",
+      "destination": "/topics/recommend.html#provider-1",
+      "permanent": false
+    },
+    {
+      "source": "/go/observe.html",
+      "destination": "/topics/recommend.html#provider-1",
+      "permanent": false
+    }
+  ]
+}
