@@ -345,7 +345,7 @@ export const reviewsData = [
       discount: '7 折',
       note: '结算时输入专属优惠码 sd88 享受立减 30% 优惠'
     },
-    affUrl: 'https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo',
+    affUrl: 'https://chenpin.shandianshuaff.com/#/?code=m28TvPVX',
     fit: '适合重视全天候稳定性、第一次选择机场、需要多设备协同与高清影音/AI办公的综合用户。',
     intro: '闪电鼠是近五年来在技术圈与跨境从业者中口碑极其优秀的旗舰级专线机场。其核心优势在于底层采用纯正的 IEPL 国际私有内网专线，完全规避了公网跨境骨干网在敏感期的拥塞与干扰。同时，闪电鼠部署了沪日与广深双核心入口容灾架构，当华东或华南网络出现区域性抖动时，系统可自动实现毫秒级选路旁路切换，保障日常浏览、4K 视频流媒体和 ChatGPT 交互始终处于极低延迟状态。',
     specs: [

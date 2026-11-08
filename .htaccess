@@ -3,9 +3,9 @@ RewriteEngine On
 RewriteBase /
 
 # HTTP 302 Temporary Redirects for AFF routes
-RewriteRule ^go/shandianshu(\.html)?$ https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo [R=302,L]
-RewriteRule ^go/sds(\.html)?$ https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo [R=302,L]
-RewriteRule ^go/shandian(\.html)?$ https://chaore01.shandianshuaff.com/#/?code=HeUwm3zo [R=302,L]
+RewriteRule ^go/shandianshu(\.html)?$ https://chenpin.shandianshuaff.com/#/?code=m28TvPVX [R=302,L]
+RewriteRule ^go/sds(\.html)?$ https://chenpin.shandianshuaff.com/#/?code=m28TvPVX [R=302,L]
+RewriteRule ^go/shandian(\.html)?$ https://chenpin.shandianshuaff.com/#/?code=m28TvPVX [R=302,L]
 RewriteRule ^go/dalaoyun(\.html)?$ https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer [R=302,L]
 RewriteRule ^go/dly(\.html)?$ https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer [R=302,L]
 RewriteRule ^go/dalao(\.html)?$ https://chaore01.dalaoyunaff.com/#/?code=rtH3pPer [R=302,L]
