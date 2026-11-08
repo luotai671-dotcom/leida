@@ -55,7 +55,9 @@ const visuals={
 'clash-verge-multi-subscription-merge':base.laptop+'<circle cx="560" cy="220" r="30" fill="none" stroke="currentColor" stroke-width="15"/><circle cx="640" cy="220" r="30" fill="none" stroke="currentColor" stroke-width="15"/><path d="M560 330 C560 270 640 270 640 330" fill="none" stroke="currentColor" stroke-width="16"/>',
 'network-route-mtr-loss-diagnosis-guide':base.speed+'<polyline points="200,480 320,380 430,420 540,290 650,330" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><circle cx="540" cy="290" r="20" fill="currentColor"/>',
 'subscription-link-privacy-security-audit':base.shield+'<path d="M260 280 H510 M260 360 H450" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><circle cx="560" cy="320" r="45" fill="none" stroke="currentColor" stroke-width="16"/>',
-'vless-reality-active-probing-deep-dive':base.globe+'<polygon points="520,200 620,270 520,340" fill="currentColor"/><circle cx="380" cy="315" r="140" fill="none" stroke="currentColor" stroke-width="14" stroke-dasharray="16 14"/>'};
+'vless-reality-active-probing-deep-dive':base.globe+'<polygon points="520,200 620,270 520,340" fill="currentColor"/><circle cx="380" cy="315" r="140" fill="none" stroke="currentColor" stroke-width="14" stroke-dasharray="16 14"/>',
+'isp-broadband-peering-routing-guide':base.speed+'<circle cx="390" cy="430" r="22" fill="currentColor"/><path d="M220 310 H580 M520 270 L580 310 L520 350" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>',
+'no-logs-privacy-audit-security-guide':base.shield+'<circle cx="385" cy="315" r="50" fill="none" stroke="currentColor" stroke-width="18"/><path d="M385 240 V315 L430 340" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>'};
 
 export function generateCovers({topics,categories,destinations}){
   for(const article of topics){

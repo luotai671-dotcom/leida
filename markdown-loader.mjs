@@ -6,11 +6,13 @@ export function loadMarkdownArticles() {
   if (!fs.existsSync(dir)) return [];
   const files = fs.readdirSync(dir).filter(f => f.endsWith('.md'));
 
-  // Maintain preferred order of the 3 articles
+  // Maintain preferred order of articles
   const order = [
     'network-route-mtr-loss-diagnosis-guide',
     'subscription-link-privacy-security-audit',
-    'vless-reality-active-probing-deep-dive'
+    'vless-reality-active-probing-deep-dive',
+    'isp-broadband-peering-routing-guide',
+    'no-logs-privacy-audit-security-guide'
   ];
 
   files.sort((a, b) => {
@@ -39,13 +41,31 @@ export function loadMarkdownArticles() {
     const keywords = tagsMatch ? tagsMatch[1].replace(/["']/g, '').trim() : '';
 
     let category = 'test';
-    if (categoryRaw.includes('安全')) category = 'security';
+    if (categoryRaw.includes('安全') || categoryRaw.includes('隐私')) category = 'security';
     else if (categoryRaw.includes('协议')) category = 'security';
-    else if (categoryRaw.includes('线路') || categoryRaw.includes('测速') || categoryRaw.includes('观测')) category = 'test';
+    else if (categoryRaw.includes('线路') || categoryRaw.includes('测速') || categoryRaw.includes('观测') || categoryRaw.includes('宽带') || categoryRaw.includes('路由')) category = 'test';
+    else if (categoryRaw.includes('客户端')) category = 'client';
+    else if (categoryRaw.includes('小火箭')) category = 'shadowrocket';
+    else if (categoryRaw.includes('指南') || categoryRaw.includes('选型')) category = 'guide';
 
     // Extract Direct Answer
     const daMatch = body.match(/【Direct Answer[^】]*】([^\n]+)/);
     const directAnswer = daMatch ? daMatch[1].trim() : '';
+
+    // Extract points from frontmatter if available
+    const pointsMatch = fmStr.match(/points:\s*\r?\n((?:\s*-\s*[^\r\n]+\r?\n)+)/);
+    let points = [];
+    if (pointsMatch) {
+      points = pointsMatch[1].split(/\r?\n/).map(l => l.replace(/^\s*-\s*["']?/, '').replace(/["']?\s*$/, '').trim()).filter(Boolean);
+    }
+    if (!points || points.length === 0) {
+      points = [
+        directAnswer || description,
+        '根据底层物理网络拓扑与通信协议标准客观选型，破除单一商业营销玄学。',
+        '针对晚高峰骨干网拥塞与三网路由抖动，建立端到端可复现的排错观测基线。',
+        '坚持零日志安全审计与多层加密隔离，保障数字资产与通信会话绝对安全。'
+      ];
+    }
 
     // Extract ASCII diagram
     let asciiHtml = '';
@@ -79,12 +99,7 @@ export function loadMarkdownArticles() {
       category,
       keywords,
       dek: description,
-      points: [
-        directAnswer,
-        '双向路由非对称性排查：去程优质无法掩盖回程 163 骨干网拥塞丢包。',
-        '端到端 MTR 与 NextTrace 压测：定位 202.97 核心跳数晚高峰队列溢出。',
-        '坚持数据实测破除营销玄学，配置强制加密 DNS 与防探测现代协议保障稳定性。'
-      ],
+      points,
       customSections,
       customHeadings: headings,
       customArticleHtml: asciiHtml + sectionsHtml.join(''),
