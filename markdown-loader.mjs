@@ -8,11 +8,13 @@ export function loadMarkdownArticles() {
 
   // Maintain preferred order of articles
   const order = [
+    'stable-airport-recommendation-selection-guide',
+    'high-availability-dual-airport-disaster-recovery-guide',
+    'isp-broadband-peering-routing-guide',
+    'no-logs-privacy-audit-security-guide',
     'network-route-mtr-loss-diagnosis-guide',
     'subscription-link-privacy-security-audit',
-    'vless-reality-active-probing-deep-dive',
-    'isp-broadband-peering-routing-guide',
-    'no-logs-privacy-audit-security-guide'
+    'vless-reality-active-probing-deep-dive'
   ];
 
   files.sort((a, b) => {

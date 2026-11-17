@@ -57,7 +57,9 @@ const visuals={
 'subscription-link-privacy-security-audit':base.shield+'<path d="M260 280 H510 M260 360 H450" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><circle cx="560" cy="320" r="45" fill="none" stroke="currentColor" stroke-width="16"/>',
 'vless-reality-active-probing-deep-dive':base.globe+'<polygon points="520,200 620,270 520,340" fill="currentColor"/><circle cx="380" cy="315" r="140" fill="none" stroke="currentColor" stroke-width="14" stroke-dasharray="16 14"/>',
 'isp-broadband-peering-routing-guide':base.speed+'<circle cx="390" cy="430" r="22" fill="currentColor"/><path d="M220 310 H580 M520 270 L580 310 L520 350" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>',
-'no-logs-privacy-audit-security-guide':base.shield+'<circle cx="385" cy="315" r="50" fill="none" stroke="currentColor" stroke-width="18"/><path d="M385 240 V315 L430 340" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>'};
+'no-logs-privacy-audit-security-guide':base.shield+'<circle cx="385" cy="315" r="50" fill="none" stroke="currentColor" stroke-width="18"/><path d="M385 240 V315 L430 340" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>',
+'stable-airport-recommendation-selection-guide':base.globe+'<path d="M220 280 L350 180 L480 280 L610 180" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><circle cx="350" cy="180" r="24" fill="currentColor"/><circle cx="610" cy="180" r="24" fill="currentColor"/>',
+'high-availability-dual-airport-disaster-recovery-guide':base.shield+'<path d="M240 320 H530 M240 260 H480 M240 380 H480" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><circle cx="580" cy="320" r="45" fill="none" stroke="currentColor" stroke-width="16"/>'};
 
 export function generateCovers({topics,categories,destinations}){
   for(const article of topics){

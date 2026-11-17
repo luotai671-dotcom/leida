@@ -119,7 +119,11 @@ const baseTopics = [
   ]]
 ].map(([slug,title,category,keywords,dek,p1,p2,p3,p4,customSections],i)=>({slug,title,category,keywords,dek,points:[p1,p2,p3,p4],customSections,date:`2026-10-${String(Math.max(1, 15 - Math.floor(i / 4))).padStart(2,'0')}`,read:8+(i%5)}));
 
-export const topics = [...baseTopics, ...loadMarkdownArticles()];
+export const topics = [...loadMarkdownArticles(), ...baseTopics].sort((a, b) => {
+  const dDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
+  if (dDiff !== 0) return dDiff;
+  return 0;
+});
 
 export { faqCategories, detailedFaqs, faqs } from './faq-data.mjs';
 
